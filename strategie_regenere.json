@@ -1,0 +1,325 @@
+{
+  "strategie": {
+    "meta": {
+      "version": "1.0",
+      "gpt": "GPT-A",
+      "etape_process": "7 — Strategy Stage",
+      "date_generation": "2026-03-23",
+      "source": "F1 + F2",
+      "client": {
+        "prenom": "Caro",
+        "nom": "Endo",
+        "email": "regis.solutions.ia@gmail.com",
+        "telephone": "0772388141",
+        "societe": "Réseau EndoCorse",
+        "secteur": "santé",
+        "localisation": {
+          "ville": "Bastia",
+          "pays": "France"
+        }
+      },
+      "fichier": "strategie.json"
+    },
+    "contexte_projet": {
+      "type_projet": "creation",
+      "description_activite": "Filière territoriale dédiée à l’endométriose en Corse, visant à mieux informer les patientes, faciliter leur orientation et valoriser les professionnels de santé impliqués dans la prise en charge.",
+      "importance_projet": "Très stratégique (socle de présence en ligne et de crédibilité de la filière).",
+      "budget_declare": "6 000€ – 10 000€",
+      "deadline_souhaitee": "2026-06-01 (souhaitée ; dépend des validations internes).",
+      "frein_principal": "Cadrer correctement le projet pour obtenir un site clair, crédible et réellement utile dès la V1.",
+      "site_existant": {
+        "existe": false,
+        "url": "",
+        "problemes_identifies": ""
+      },
+      "presence_en_ligne": {
+        "canaux_actifs": [],
+        "outils_numeriques_utilises": [
+          "Agenda ou prise de rendez-vous en ligne"
+        ]
+      }
+    },
+    "objectifs_business": {
+      "objectif_principal": "Rendre la filière EndoCorse visible et crédible en ligne via un point d’entrée clair et rassurant sur l’endométriose en Corse.",
+      "objectif_secondaire": "Permettre l’orientation des patientes grâce à un annuaire structuré des professionnels de santé de la filière, adapté aux besoins et à la localisation.",
+      "conversions_attendues": [
+        "Consultation de l’annuaire et recherche/filtrage de professionnels",
+        "Prise de contact / demande d’information via formulaire",
+        "Inscription à la newsletter (sensibilisation / actualités)",
+        "Téléchargement de ressources (PDF, brochures, documents utiles)",
+        "Consultation régulière des actualités (retour sur le site)",
+        "Démarrage et complétion du parcours d’adhésion professionnel (QCM → charte → profil → choix de visibilité)",
+        "Reprise d’un parcours d’adhésion en brouillon via lien email",
+        "Création/validation d’un profil professionnel et publication dans l’annuaire (public ou interne)"
+      ],
+      "indicateurs_succes": [
+        "Visibilité organique sur les requêtes liées à l’endométriose en Corse (impressions, clics, positions)",
+        "Nombre de sessions et taux d’engagement sur les pages clés (annuaire, parcours, comprendre)",
+        "Nombre de recherches/filtrages dans l’annuaire et vues de fiches professionnels",
+        "Nombre de formulaires envoyés (contacts/orientation) et taux de réponse",
+        "Nombre d’inscriptions newsletter et croissance mensuelle",
+        "Nombre de téléchargements de ressources",
+        "Qualité perçue : retours des parties prenantes (patients/pros) sur clarté, navigation, confiance",
+        "Nombre de démarrages, taux de complétion et temps moyen du parcours d’adhésion professionnel",
+        "Taux de réussite au QCM (1er passage) et volumes d’échecs/cooldowns",
+        "Nombre de nouveaux profils professionnels créés et publiés (public vs interne) / mois",
+        "Taux de reprise de brouillon (parcours repris vs abandonné)",
+        "Volume et délai de traitement des notifications internes (admins) liées aux adhésions"
+      ]
+    },
+    "profils_utilisateurs": [
+      {
+        "segment": "particuliers",
+        "description": "Personnes concernées par l’endométriose (patientes), proches aidants, personnes en recherche d’information et d’orientation en Corse.",
+        "besoins": [
+          "Comprendre l’endométriose avec une information fiable et vulgarisée",
+          "Être orientée rapidement vers les bons interlocuteurs en fonction de la situation",
+          "Identifier des professionnels et structures de prise en charge près de chez soi",
+          "Accéder à des ressources pratiques (documents, guides, démarches)"
+        ],
+        "freins": [
+          "Fatigue cognitive / charge émotionnelle : besoin d’aller à l’essentiel",
+          "Manque de confiance envers des sources non institutionnelles",
+          "Difficulté à s’orienter dans le système de soins",
+          "Accessibilité : lecture, navigation, compréhension (public très large)"
+        ],
+        "objectifs_sur_le_site": [
+          "Trouver un professionnel/centre adapté",
+          "Comprendre le parcours de prise en charge",
+          "Savoir qui contacter et comment",
+          "Accéder à des documents utiles"
+        ],
+        "contexte_utilisation": "Recherche souvent sur mobile, en situation de stress ou d’urgence perçue ; besoin de repères simples et immédiats."
+      },
+      {
+        "segment": "professionnels",
+        "description": "Professionnels de santé et partenaires de la filière (médecins, sages-femmes, structures, associations/acteurs institutionnels) souhaitant être visibles et orienter correctement.",
+        "besoins": [
+          "Être référencé avec des informations à jour (spécialité, localisation, modalités d’orientation)",
+          "Pouvoir partager un lien fiable à destination des patientes",
+          "Accéder à des ressources/actualités de filière",
+          "Renforcer la crédibilité de la filière et de la démarche territoriale"
+        ],
+        "freins": [
+          "Temps limité pour contribuer",
+          "Besoin d’un cadre clair sur la mise à jour des informations",
+          "Sensibilité à la conformité et à la réputation (domaine santé)"
+        ],
+        "objectifs_sur_le_site": [
+          "Être trouvé via l’annuaire",
+          "S’appuyer sur des contenus cohérents de parcours",
+          "Relayer les actualités/sensibilisation",
+          "Participer à la structuration d’une présence institutionnelle"
+        ],
+        "contexte_utilisation": "Consultation plutôt desktop au travail, mais partage de liens à des patientes sur mobile ; attention aux validations et à l’exactitude."
+      }
+    ],
+    "positionnement": {
+      "valeur_unique_visiteurs": "Un point d’entrée unique, localisé (Corse), fiable et rassurant pour comprendre l’endométriose, identifier les bons interlocuteurs et faciliter l’orientation dans un parcours de soins structuré.",
+      "elements_differenciation": [
+        "Ancrage territorial Corse : information et annuaire adaptés au territoire",
+        "Approche filière : visibilité coordonnée des professionnels impliqués",
+        "Orientation priorisée : accès direct à l’annuaire et au parcours",
+        "Exigence d’accessibilité, clarté et sobriété (références institutionnelles)"
+      ],
+      "ressenti_souhaite": "Sobre, rassurant, clair, professionnel, crédible (proche des standards institutionnels santé).",
+      "ton_editorial": "Pédagogique, factuel, accessible, non anxiogène ; vocabulaire simple et structuration par questions/besoins ; transparence sur les sources et validations.",
+      "messages_cles": [
+        "Comprendre l’endométriose en Corse avec une information fiable",
+        "S’orienter vers les bons interlocuteurs selon sa situation",
+        "Découvrir le parcours de prise en charge et les ressources utiles",
+        "Identifier la filière EndoCorse et ses professionnels"
+      ],
+      "elements_credibilite": {
+        "disponibles": [
+          "Témoignages",
+          "Certifications",
+          "Références clients"
+        ],
+        "manquants_recommandes": [
+          "Références institutionnelles/partenaires (ARS, établissements, associations) si disponibles",
+          "Process de validation éditoriale (comité de relecture, dates de mise à jour)",
+          "Sources et liens vers ressources officielles (HAS, Santé.fr, etc.)",
+          "Mentions sur la gouvernance de la filière et périmètre de l’annuaire"
+        ]
+      }
+    },
+    "fonctionnalites": {
+      "essentielles": [
+        {
+          "nom": "Annuaire des professionnels de santé (listings + fiches)",
+          "description": "Base de données de professionnels/structures avec fiches détaillées et critères de recherche/filtre (spécialité, localisation, type de prise en charge, modalités d’orientation).",
+          "justification": "Objectif d’orientation des patientes → rendre la recherche du bon interlocuteur immédiate et fiable, tout en valorisant la filière."
+        },
+        {
+          "nom": "Moteur de recherche + filtres sur l’annuaire",
+          "description": "Recherche par mots-clés et filtres ; tri ; accès en 2 clics depuis les pages principales.",
+          "justification": "Objectif d’utilité et de clarté → réduire la friction et la charge cognitive pour des personnes souvent en situation de stress."
+        },
+        {
+          "nom": "Pages éditoriales structurées (Comprendre, Parcours, Filière, Services)",
+          "description": "Pages de contenu claires avec hiérarchie, sommaires, blocs 'à retenir', FAQ si pertinent.",
+          "justification": "Objectif visibilité + confiance → démontrer l’expertise et fournir un cadre de compréhension et d’orientation."
+        },
+        {
+          "nom": "Formulaire de contact",
+          "description": "Formulaire orienté 'demande d’information/orientation' avec routage vers la bonne personne/boîte mail ; anti-spam.",
+          "justification": "Conversion attendue → permettre une prise de contact simple et traçable."
+        },
+        {
+          "nom": "Accessibilité renforcée",
+          "description": "Conception conforme aux bonnes pratiques d’accessibilité web (navigation clavier, contrastes, structure sémantique, contenus lisibles).",
+          "justification": "Enjeu santé + public large → maximiser l’accès à l’information et la confiance."
+        },
+        {
+          "nom": "Pages légales (mentions légales, politique de confidentialité)",
+          "description": "Mise en conformité RGPD (politique, cookies si nécessaire, gestion des formulaires).",
+          "justification": "Enjeu de protection des données → indispensable dans le domaine santé."
+        },
+        {
+          "nom": "Hébergement + sauvegardes automatiques + maintenance",
+          "description": "Solution d’hébergement incluse, sauvegardes automatiques, monitoring et mises à jour techniques.",
+          "justification": "Objectif pérennité + sécurité → garantir un socle fiable sans charge interne."
+        },
+        {
+          "nom": "Parcours d’adhésion des professionnels (auto-inscription en 4 étapes, reprenable)",
+          "description": "Parcours digitalisé d’adhésion à la filière EndoCorse : QCM de validation (scoring + email de résultats + délai avant nouvel essai), acceptation explicite de la charte, création du profil professionnel (formulaire multi-champs incluant alternative sans RPPS/ADELI), choix de visibilité (annuaire public patientes vs annuaire interne professionnels). Parcours ~30 minutes, avec sauvegarde de brouillon et reprise multi-sessions via lien email. Notifications internes aux administrateurs et email de confirmation avec documents à télécharger.",
+          "justification": "Alimentation qualifiée de l’annuaire → conditionne directement l’objectif d’orientation des patientes via un annuaire fiable, structuré et maintenable."
+        },
+        {
+          "nom": "Base de données locale des professionnels (gestion + champs évolutifs + temporalité)",
+          "description": "Base de données interne permettant ajout/retrait manuel, champs additionnels administrables, et filtres temporels (rappels pour repasser tests/formations). Modèle de données structuré pour compatibilité future avec le ROR national (ex. croisement RPPS avec titulaires du QCM).",
+          "justification": "Pérennité et qualité des données → garantir un annuaire maintenu dans le temps et préparer l’interopérabilité institutionnelle (ROR)."
+        }
+      ],
+      "souhaitees": [
+        {
+          "nom": "Blog / actualités",
+          "description": "Espace actualités/sensibilisation, publications mensuelles, catégorisation.",
+          "justification": "Objectif visibilité et réassurance → maintenir le site vivant, soutenir le SEO et relayer la communication de la filière."
+        },
+        {
+          "nom": "Téléchargement de documents",
+          "description": "Bibliothèque de ressources (PDF, brochures) avec catégorisation et pages ressources.",
+          "justification": "Objectif utilité → fournir des supports pratiques, augmenter l’engagement et la valeur perçue."
+        },
+        {
+          "nom": "Newsletter",
+          "description": "Collecte d’emails conforme RGPD (double opt-in) et envoi via un outil dédié.",
+          "justification": "Objectif fidélisation et sensibilisation → garder le lien avec les audiences et amplifier les actualités."
+        },
+        {
+          "nom": "Intégration à un outil (CRM, API, etc.)",
+          "description": "Connexion à un outil tiers pour formulaires/newsletter ou synchronisation de données (notamment annuaire).",
+          "justification": "Objectif évolutivité → éviter la ressaisie, professionnaliser le suivi et préparer l’intégration sectorielle."
+        }
+      ],
+      "optionnelles": [
+        {
+          "nom": "Connexion/synchronisation avec le ROR national (annuaire)",
+          "description": "Compatibilité et/ou synchronisation des données de l’annuaire avec le ROR national via référentiels/API, selon faisabilité et droits d’accès.",
+          "justification": "Objectif long terme et institutionnel → aligner l’annuaire avec les référentiels santé et faciliter l’interopérabilité."
+        },
+        {
+          "nom": "Module de contribution/mise à jour encadrée des fiches",
+          "description": "Workflow simple (formulaire interne, validation) pour mettre à jour les informations des professionnels.",
+          "justification": "Objectif qualité et pérennité → maintenir l’annuaire à jour sans dépendre d’un unique contributeur."
+        }
+      ]
+    },
+    "fondation_technique": {
+      "type_site_recommande": "Site vitrine avec contenu (blog/actualités) + annuaire (base de données) orienté 'orientation patientes'.",
+      "orientation_cms": "CMS recommandé (ex. WordPress) avec gestion de contenus et 'types de contenus' dédiés (professionnels, ressources, actualités), afin de garantir autonomie et évolutivité dans le budget.",
+      "integrations_necessaires": [
+        "Prévoir une architecture d’annuaire compatible avec une future connexion au ROR national (structure de données, champs normalisés, possibilité d’API).",
+        "Outil newsletter/CRM (à sélectionner) pour gérer abonnements et conformité (double opt-in).",
+        "Service d’emails transactionnels (résultats QCM, lien de reprise de brouillon, confirmation d’adhésion, notifications admins).",
+        "Gestion des rôles et droits (admin, professionnel, public) pour distinguer annuaire public vs annuaire interne.",
+        "Stockage et gestion des documents téléchargeables associés à l’adhésion (charte, pièces/documents) avec traçabilité."
+      ],
+      "contraintes": {
+        "accessibilite": "Exigence forte : conception centrée sur clarté, lisibilité et navigation (bonnes pratiques accessibilité web, tests sur parcours clés).",
+        "securite_donnees": "Sujet sensible : RGPD, sécurisation des formulaires, limitation des données collectées, journalisation, durées de conservation, hébergement sécurisé, mises à jour régulières. Le parcours d’adhésion implique des comptes/profils et des liens de reprise par email : prévoir authentification, gestion de sessions, liens à durée de validité, protections anti-usurpation, et journalisation des actions d’adhésion.",
+        "performance": "Priorité à la rapidité et à la sobriété (mobile-first, optimisation médias, cache, pages annuaire performantes)."
+      },
+      "infrastructure": {
+        "nom_de_domaine": "endocorse.fr",
+        "hebergement": "À fournir (solution d’hébergement incluse dans l’accompagnement).",
+        "maintenance_souhaitee": "Prise en charge par le prestataire après mise en ligne.",
+        "frequence_mises_a_jour": "Mensuelle"
+      }
+    },
+    "contenu_et_visuels": {
+      "strategie_textes": "Rédaction demandée au prestataire ; contenus à construire sur une base validée par les responsables et relecture possible par professionnels/partenaires.",
+      "situation_visuels": "Besoin d’accompagnement pour trouver/produire les visuels ; direction visuelle sobre et institutionnelle à cadrer.",
+      "logo_disponible": "Non (création souhaitée).",
+      "charte_existante": null
+    },
+    "references": {
+      "sites_inspires": [
+        "EndoBreizh (clarté, structuration, positionnement rassurant, mise en avant de la filière)",
+        "Santé.fr (approche informative, lisibilité, rôle d’orientation)",
+        "Références institutionnelles santé (sobriété, crédibilité, accessibilité)"
+      ],
+      "ameliorations_souhaitees": "Création from scratch : base claire, crédible et évolutive, avec arborescence bien pensée, contenus utiles et annuaire facilitant l’orientation."
+    },
+    "seo_marketing": {
+      "base_seo_existante": "Non",
+      "mots_cles_cibles": "endométriose Corse; filière endométriose Corse; spécialiste endométriose Corse; prise en charge endométriose Corse; gynécologue endométriose Corse; parcours endométriose Corse; douleur pelvienne Corse; professionnels endométriose Corse; annuaire endométriose Corse",
+      "actions_marketing_prevues": [
+        "Réseaux sociaux"
+      ]
+    },
+    "langues": [
+      "Français"
+    ],
+    "organisation_projet": {
+      "parties_prenantes": "Décisions/validations par les responsables du projet, avec contribution possible de professionnels de santé et partenaires de la filière (relectures et apports contenu).",
+      "services_additionnels": "Sauvegardes automatiques ; maintenance prise en charge ; hébergement à inclure."
+    },
+    "alertes": [
+      {
+        "type": "manque",
+        "section": "contexte_projet",
+        "champ": "adresse_postale",
+        "message": "Adresse postale de la structure non confirmée (nécessaire pour mentions légales)."
+      },
+      {
+        "type": "recommandation",
+        "section": "fondation_technique",
+        "champ": "integrations_necessaires",
+        "message": "Choisir et confirmer les outils cibles (newsletter/CRM, éventuel outil de formulaires) pour cadrer les intégrations et la conformité RGPD."
+      },
+      {
+        "type": "risque",
+        "section": "fonctionnalites",
+        "champ": "optionnelles",
+        "message": "La connexion au ROR national peut impacter périmètre, délais et budget ; à cadrer en V1 (structure de données) puis à planifier en phase dédiée si nécessaire."
+      },
+      {
+        "type": "recommandation",
+        "section": "organisation_projet",
+        "champ": "parties_prenantes",
+        "message": "Compte tenu des validations internes multiples, cadrer un circuit de validation (qui valide quoi, délais de retour) pour sécuriser la date de mise en ligne."
+      },
+      {
+        "type": "contradiction",
+        "section": "contexte_projet",
+        "champ": "deadline_souhaitee",
+        "message": "F1 indique une date idéale de mise en ligne au 01-Jun-2026, tandis que F2 évoque une mise en ligne 'dans les prochains mois' sans compromettre la qualité du cadrage et des validations internes."
+      },
+      {
+        "type": "risque",
+        "section": "fonctionnalites",
+        "champ": "essentielles",
+        "message": "Le parcours d’adhésion (QCM, reprise multi-sessions, rôles/visibilités, emails transactionnels) augmente la complexité fonctionnelle et peut impacter budget et planning ; à cadrer précisément (règles du QCM, workflows admin, données collectées, conformité)."
+      },
+      {
+        "type": "recommandation",
+        "section": "fondation_technique",
+        "champ": "contraintes.securite_donnees",
+        "message": "Définir dès la V1 les règles de gestion des données du parcours pro (finalités, durées de conservation, droits d’accès, visibilité public/interne, sécurité des liens de reprise) afin d’assurer conformité RGPD et confiance des parties prenantes."
+      }
+    ]
+  }
+}

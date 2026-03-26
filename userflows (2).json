@@ -1,0 +1,1195 @@
+{
+  "userflows": {
+    "meta": {
+      "fichier": "userflows.json",
+      "version": "1.0",
+      "gpt": "GPT-B",
+      "etape_process": "8 — User Flows Stage",
+      "date_generation": "2026-03-23",
+      "source": "strategie.json + F1 + F2",
+      "client": {
+        "societe": "Réseau EndoCorse",
+        "secteur": "santé"
+      }
+    },
+    "profils_references": [
+      {
+        "id": "profil_01",
+        "segment": "particuliers",
+        "description_courte": "Patientes concernées par l’endométriose, proches aidants et personnes en recherche d’information et d’orientation en Corse.",
+        "objectif_principal_sur_le_site": "Trouver un professionnel/centre adapté et comprendre le parcours de prise en charge."
+      },
+      {
+        "id": "profil_02",
+        "segment": "professionnels",
+        "description_courte": "Professionnels de santé / partenaires souhaitant être visibles dans l’annuaire, partager un lien fiable et accéder aux informations de filière.",
+        "objectif_principal_sur_le_site": "Être trouvé via l’annuaire et disposer d’un point d’entrée fiable à partager aux patientes."
+      }
+    ],
+    "flows": [
+      {
+        "id": "flow_01",
+        "nom": "Découvrir EndoCorse et comprendre l’endométriose",
+        "description": "Première visite : comprendre la filière, accéder à une information fiable et repérer les accès rapides (parcours, annuaire, ressources).",
+        "profil_id": "profil_01",
+        "categorie": "decouverte",
+        "objectif_du_flow": "Rassurer et orienter la visiteuse vers les pages clés (Comprendre, Parcours, Annuaire).",
+        "point_entree": {
+          "type": "recherche_google",
+          "description": "Recherche type “endométriose Corse” / “filière endométriose Corse” menant à l’accueil ou à une page éditoriale."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Arriver sur la page d’accueil ou une page éditoriale",
+            "page_ou_ecran": "Accueil",
+            "elements_impliques": [
+              "header",
+              "menu",
+              "accès rapides"
+            ],
+            "resultat_attendu": "Identifier clairement EndoCorse et l’objectif du site."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Cliquer sur “Comprendre l’endométriose” dans le menu ou un bouton d’accès rapide",
+            "page_ou_ecran": "Comprendre l’endométriose",
+            "elements_impliques": [
+              "menu",
+              "bouton CTA"
+            ],
+            "resultat_attendu": "Accéder à une page structurée et lisible."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "Parcourir le sommaire et ouvrir une section (symptômes / diagnostic / ressources officielles)",
+            "page_ou_ecran": "Comprendre l’endométriose",
+            "elements_impliques": [
+              "sommaire ancré",
+              "accordéons/FAQ"
+            ],
+            "resultat_attendu": "Trouver rapidement une réponse à une question."
+          },
+          {
+            "numero": 4,
+            "action_utilisateur": "Cliquer sur “Parcours de prise en charge” depuis un lien interne",
+            "page_ou_ecran": "Parcours de prise en charge",
+            "elements_impliques": [
+              "liens internes",
+              "blocs “à retenir”"
+            ],
+            "resultat_attendu": "Comprendre les grandes étapes d’orientation et de prise en charge."
+          },
+          {
+            "numero": 5,
+            "action_utilisateur": "Cliquer sur “Trouver un professionnel”",
+            "page_ou_ecran": "Annuaire — Listing",
+            "elements_impliques": [
+              "CTA",
+              "lien"
+            ],
+            "resultat_attendu": "Basculer vers la recherche de professionnels."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 3,
+            "condition": "si la visiteuse ne trouve pas l’information recherchée dans la page",
+            "si_vrai": {
+              "etape_suivante": 4,
+              "description": "Elle consulte le parcours de prise en charge pour être orientée."
+            },
+            "si_faux": {
+              "etape_suivante": 5,
+              "description": "Elle passe directement à la recherche de professionnels.",
+              "page_destination": "Annuaire — Listing"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "liens internes cassés ou section introuvable",
+            "message_utilisateur": "Cette section n’est pas disponible pour le moment.",
+            "action_systeme": "Afficher une alternative (recherche interne / liens vers pages clés) et journaliser l’erreur."
+          }
+        ],
+        "point_sortie": {
+          "type": "redirection",
+          "description": "Transition vers la recherche dans l’annuaire ou vers le parcours."
+        },
+        "pages_impliquees": [
+          "Accueil",
+          "Comprendre l’endométriose",
+          "Parcours de prise en charge",
+          "Annuaire — Listing"
+        ],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées (Comprendre, Parcours, Filière, Services)",
+          "Accessibilité renforcée"
+        ],
+        "hypotheses": [
+          "La page “Comprendre l’endométriose” inclut un sommaire et/ou une FAQ pour réduire la charge cognitive."
+        ]
+      },
+      {
+        "id": "flow_02",
+        "nom": "Rechercher un professionnel dans l’annuaire et consulter une fiche",
+        "description": "Trouver un professionnel/une structure via recherche et filtres, puis vérifier les informations sur la fiche.",
+        "profil_id": "profil_01",
+        "categorie": "specifique",
+        "objectif_du_flow": "Permettre une orientation rapide vers le bon interlocuteur en Corse.",
+        "point_entree": {
+          "type": "homepage",
+          "description": "Accès via un bouton “Trouver un professionnel” depuis l’accueil, le parcours, ou une page éditoriale."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Ouvrir la page Annuaire",
+            "page_ou_ecran": "Annuaire — Listing",
+            "elements_impliques": [
+              "menu",
+              "CTA"
+            ],
+            "resultat_attendu": "Voir une liste de professionnels et les filtres."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Saisir un mot-clé (spécialité / ville) dans la recherche",
+            "page_ou_ecran": "Annuaire — Listing",
+            "elements_impliques": [
+              "champ de recherche"
+            ],
+            "resultat_attendu": "Raffiner la liste selon la recherche."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "Appliquer des filtres (spécialité, localisation, niveau de prise en charge 1/2/3, modalités d’orientation)",
+            "page_ou_ecran": "Annuaire — Listing",
+            "elements_impliques": [
+              "filtres",
+              "bouton appliquer",
+              "tags"
+            ],
+            "resultat_attendu": "Afficher un sous-ensemble pertinent de résultats."
+          },
+          {
+            "numero": 4,
+            "action_utilisateur": "Cliquer sur une carte/un résultat de la liste",
+            "page_ou_ecran": "Fiche professionnel",
+            "elements_impliques": [
+              "carte résultat",
+              "lien fiche"
+            ],
+            "resultat_attendu": "Accéder à la fiche détaillée."
+          },
+          {
+            "numero": 5,
+            "action_utilisateur": "Lire les informations clés (coordonnées, spécialité, niveau 1/2/3, modalités d’orientation) et choisir une action",
+            "page_ou_ecran": "Fiche professionnel",
+            "elements_impliques": [
+              "blocs infos",
+              "badge niveau (code couleur)",
+              "CTA contact (niveau 1 uniquement)",
+              "liens externes"
+            ],
+            "resultat_attendu": "Décider de contacter le professionnel (si niveau 1) ou de passer par un niveau 1 / contacter la filière."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 3,
+            "condition": "si aucun résultat ne correspond aux filtres",
+            "si_vrai": {
+              "etape_suivante": 2,
+              "description": "Elle modifie la recherche ou réinitialise des filtres."
+            },
+            "si_faux": {
+              "etape_suivante": 4,
+              "description": "Elle ouvre une fiche pertinente.",
+              "page_destination": "Fiche professionnel"
+            }
+          },
+          {
+            "apres_etape": 5,
+            "condition": "si la visiteuse choisit de demander une orientation à EndoCorse",
+            "si_vrai": {
+              "etape_suivante": null,
+              "description": "Elle passe au formulaire de contact (demande d’information/orientation)."
+            },
+            "si_faux": {
+              "etape_suivante": null,
+              "description": "Elle contacte directement le professionnel via les coordonnées / lien externe.",
+              "page_destination": "Fiche professionnel"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "erreur de chargement de la liste (timeout)",
+            "message_utilisateur": "L’annuaire met plus de temps que prévu à s’afficher. Réessayez.",
+            "action_systeme": "Afficher un bouton “Réessayer” + fallback (liste paginée / chargement progressif) et log technique."
+          },
+          {
+            "declencheur": "fiche introuvable (URL invalidée)",
+            "message_utilisateur": "Cette fiche n’est plus disponible.",
+            "action_systeme": "Rediriger vers l’annuaire avec filtres réinitialisés."
+          }
+        ],
+        "point_sortie": {
+          "type": "redirection",
+          "description": "Vers un contact (filière ou professionnel) ou arrêt après consultation."
+        },
+        "pages_impliquees": [
+          "Annuaire — Listing",
+          "Fiche professionnel"
+        ],
+        "fonctionnalites_requises": [
+          "Annuaire des professionnels de santé (listings + fiches)",
+          "Moteur de recherche + filtres sur l’annuaire",
+          "Accessibilité renforcée"
+        ],
+        "hypotheses": [
+          "Les champs de filtres et la taxonomie (spécialité, localisation, modalités) seront définis lors du cadrage de l’annuaire.",
+          "Les fiches affichent un badge de niveau (1/2/3) ; l’action de contact direct est disponible uniquement pour les professionnels de niveau 1."
+        ]
+      },
+      {
+        "id": "flow_03",
+        "nom": "Demander une information / une orientation via le formulaire de contact",
+        "description": "Envoyer une demande d’information ou d’orientation à la filière EndoCorse, avec confirmation de prise en compte.",
+        "profil_id": "profil_01",
+        "categorie": "conversion",
+        "objectif_du_flow": "Permettre une prise de contact simple et traçable pour être orientée.",
+        "point_entree": {
+          "type": "acces_direct",
+          "description": "Accès depuis le menu “Contact” ou depuis un CTA dans l’annuaire / le parcours."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Ouvrir la page Contact",
+            "page_ou_ecran": "Contact",
+            "elements_impliques": [
+              "menu",
+              "lien"
+            ],
+            "resultat_attendu": "Voir un formulaire clair orienté “demande d’information/orientation”."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Choisir le motif (information / orientation / autre) et remplir les champs requis",
+            "page_ou_ecran": "Contact",
+            "elements_impliques": [
+              "formulaire",
+              "liste déroulante",
+              "champs",
+              "aide"
+            ],
+            "resultat_attendu": "Formulaire complet et conforme (données minimisées)."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "Valider le consentement RGPD et soumettre le formulaire",
+            "page_ou_ecran": "Contact",
+            "elements_impliques": [
+              "case consentement",
+              "anti-spam",
+              "bouton envoyer"
+            ],
+            "resultat_attendu": "Demande envoyée avec succès."
+          },
+          {
+            "numero": 4,
+            "action_utilisateur": "Lire la confirmation et les prochaines étapes",
+            "page_ou_ecran": "Confirmation contact",
+            "elements_impliques": [
+              "message de confirmation",
+              "liens utiles"
+            ],
+            "resultat_attendu": "Savoir quoi attendre (délais, alternatives, urgences)."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 3,
+            "condition": "si le formulaire est soumis avec succès",
+            "si_vrai": {
+              "etape_suivante": 4,
+              "description": "Affichage d’une confirmation + copie par email si prévu."
+            },
+            "si_faux": {
+              "etape_suivante": 2,
+              "description": "Mettre en évidence les champs en erreur et conserver les données saisies.",
+              "page_destination": "Contact"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "champs obligatoires manquants / format email invalide",
+            "message_utilisateur": "Merci de vérifier les champs indiqués.",
+            "action_systeme": "Mettre en évidence les erreurs, annoncer l’erreur aux lecteurs d’écran, empêcher l’envoi."
+          },
+          {
+            "declencheur": "anti-spam déclenché",
+            "message_utilisateur": "Votre message n’a pas pu être envoyé. Réessayez ou utilisez une autre méthode de contact.",
+            "action_systeme": "Proposer un lien email/téléphone (si disponible) + journaliser l’événement."
+          },
+          {
+            "declencheur": "panne serveur / timeout",
+            "message_utilisateur": "Une erreur est survenue lors de l’envoi. Réessayez plus tard.",
+            "action_systeme": "Conserver le brouillon local si possible et log technique."
+          }
+        ],
+        "point_sortie": {
+          "type": "conversion",
+          "description": "Demande envoyée et confirmée."
+        },
+        "pages_impliquees": [
+          "Contact",
+          "Confirmation contact",
+          "Politique de confidentialité"
+        ],
+        "fonctionnalites_requises": [
+          "Formulaire de contact",
+          "Pages légales (mentions légales, politique de confidentialité)",
+          "Accessibilité renforcée"
+        ],
+        "hypotheses": [
+          "Le routage (boîte mail / personne) et le délai de réponse affiché seront confirmés par l’équipe EndoCorse."
+        ]
+      },
+      {
+        "id": "flow_04",
+        "nom": "Télécharger une ressource (PDF, brochure, document utile)",
+        "description": "Trouver une ressource utile et la télécharger depuis la bibliothèque de documents.",
+        "profil_id": "profil_01",
+        "categorie": "specifique",
+        "objectif_du_flow": "Permettre l’accès rapide à des documents pratiques et fiables.",
+        "point_entree": {
+          "type": "landing_page",
+          "description": "Arrivée sur “Ressources” via menu, depuis “Comprendre”, ou depuis un lien partagé."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Ouvrir la page Ressources",
+            "page_ou_ecran": "Ressources",
+            "elements_impliques": [
+              "menu",
+              "liste"
+            ],
+            "resultat_attendu": "Voir une liste catégorisée de documents."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Filtrer/choisir une catégorie ou utiliser la recherche (si présente)",
+            "page_ou_ecran": "Ressources",
+            "elements_impliques": [
+              "filtres",
+              "recherche"
+            ],
+            "resultat_attendu": "Repérer un document pertinent."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "Ouvrir la page du document (ou la fiche ressource)",
+            "page_ou_ecran": "Ressource — Détail",
+            "elements_impliques": [
+              "lien",
+              "carte ressource"
+            ],
+            "resultat_attendu": "Lire le résumé, la date et la source."
+          },
+          {
+            "numero": 4,
+            "action_utilisateur": "Cliquer sur “Télécharger”",
+            "page_ou_ecran": "Ressource — Détail",
+            "elements_impliques": [
+              "bouton télécharger"
+            ],
+            "resultat_attendu": "Téléchargement du fichier PDF."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 4,
+            "condition": "si le téléchargement échoue",
+            "si_vrai": {
+              "etape_suivante": 4,
+              "description": "Proposer “Réessayer” ou “Ouvrir dans le navigateur”."
+            },
+            "si_faux": {
+              "etape_suivante": null,
+              "description": "Le document est téléchargé.",
+              "page_destination": "Ressource — Détail"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "fichier manquant / lien cassé",
+            "message_utilisateur": "Ce document n’est plus disponible.",
+            "action_systeme": "Masquer le lien, proposer des documents similaires et notifier l’administration."
+          }
+        ],
+        "point_sortie": {
+          "type": "conversion",
+          "description": "Document téléchargé (engagement)."
+        },
+        "pages_impliquees": [
+          "Ressources",
+          "Ressource — Détail"
+        ],
+        "fonctionnalites_requises": [
+          "Téléchargement de documents",
+          "Accessibilité renforcée"
+        ],
+        "hypotheses": [
+          "La structure de catégories (type de document / public / thématique) sera validée lors du cadrage contenu."
+        ]
+      },
+      {
+        "id": "flow_05",
+        "nom": "S’inscrire à la newsletter et confirmer l’abonnement",
+        "description": "Inscription à la newsletter avec double opt-in, puis confirmation de l’abonnement.",
+        "profil_id": "profil_01",
+        "categorie": "conversion",
+        "objectif_du_flow": "Permettre de recevoir les actualités/sensibilisation de la filière.",
+        "point_entree": {
+          "type": "homepage",
+          "description": "Bloc newsletter en bas de page (accueil / actualités / ressources)."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Saisir son email dans le bloc newsletter",
+            "page_ou_ecran": "Accueil",
+            "elements_impliques": [
+              "champ email",
+              "bouton s’inscrire"
+            ],
+            "resultat_attendu": "Demande d’inscription enregistrée."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Ouvrir l’email de confirmation et cliquer sur le lien de validation",
+            "page_ou_ecran": "Confirmation newsletter",
+            "elements_impliques": [
+              "email",
+              "lien de confirmation"
+            ],
+            "resultat_attendu": "Abonnement confirmé (double opt-in)."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "Lire le message de confirmation et accéder aux actualités",
+            "page_ou_ecran": "Confirmation newsletter",
+            "elements_impliques": [
+              "message",
+              "lien vers Actualités"
+            ],
+            "resultat_attendu": "Comprendre que l’inscription est active."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 1,
+            "condition": "si l’email est déjà inscrit",
+            "si_vrai": {
+              "etape_suivante": 3,
+              "description": "Afficher un message indiquant que l’adresse est déjà abonnée."
+            },
+            "si_faux": {
+              "etape_suivante": 2,
+              "description": "Envoyer l’email de confirmation (double opt-in).",
+              "page_destination": "Confirmation newsletter"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "format email invalide",
+            "message_utilisateur": "Merci d’indiquer une adresse email valide.",
+            "action_systeme": "Validation côté client + serveur, message accessible."
+          },
+          {
+            "declencheur": "outil newsletter indisponible",
+            "message_utilisateur": "L’inscription est temporairement indisponible.",
+            "action_systeme": "Désactiver le formulaire, proposer un contact alternatif et log."
+          }
+        ],
+        "point_sortie": {
+          "type": "conversion",
+          "description": "Abonnement newsletter confirmé."
+        },
+        "pages_impliquees": [
+          "Accueil",
+          "Confirmation newsletter",
+          "Politique de confidentialité"
+        ],
+        "fonctionnalites_requises": [
+          "Newsletter",
+          "Pages légales (mentions légales, politique de confidentialité)"
+        ],
+        "hypotheses": [
+          "Le site utilisera un outil de newsletter/CRM avec double opt-in (outil à sélectionner)."
+        ]
+      },
+      {
+        "id": "flow_06",
+        "nom": "Consulter une actualité et revenir régulièrement",
+        "description": "Lire une actualité (sensibilisation / mise à jour filière) puis revenir via d’autres publications ou via la newsletter.",
+        "profil_id": "profil_01",
+        "categorie": "fidelisation",
+        "objectif_du_flow": "Encourager le retour sur le site et la consultation régulière des contenus.",
+        "point_entree": {
+          "type": "reseau_social",
+          "description": "Lien partagé sur réseaux sociaux ou depuis une newsletter vers une actualité."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Arriver sur une page d’actualité",
+            "page_ou_ecran": "Actualité — Détail",
+            "elements_impliques": [
+              "titre",
+              "contenu",
+              "fil d’Ariane"
+            ],
+            "resultat_attendu": "Lire l’information principale."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Cliquer sur une catégorie/tag ou “Voir toutes les actualités”",
+            "page_ou_ecran": "Actualités — Listing",
+            "elements_impliques": [
+              "tags",
+              "liens"
+            ],
+            "resultat_attendu": "Découvrir d’autres contenus pertinents."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "S’abonner à la newsletter depuis un bloc d’inscription (optionnel)",
+            "page_ou_ecran": "Actualités — Listing",
+            "elements_impliques": [
+              "bloc newsletter"
+            ],
+            "resultat_attendu": "Créer un point de contact pour être informé des prochaines publications."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 2,
+            "condition": "si la visiteuse souhaite être informée des prochaines publications",
+            "si_vrai": {
+              "etape_suivante": 3,
+              "description": "Elle s’inscrit à la newsletter."
+            },
+            "si_faux": {
+              "etape_suivante": null,
+              "description": "Elle quitte le site après lecture.",
+              "page_destination": "Actualité — Détail"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "actualité non trouvée (URL partagée obsolète)",
+            "message_utilisateur": "Cette actualité n’est plus disponible.",
+            "action_systeme": "Rediriger vers la liste des actualités ou une page 404 avec suggestions."
+          }
+        ],
+        "point_sortie": {
+          "type": "retour_accueil",
+          "description": "Retour à l’accueil ou poursuite de lecture d’autres actualités."
+        },
+        "pages_impliquees": [
+          "Actualité — Détail",
+          "Actualités — Listing"
+        ],
+        "fonctionnalites_requises": [
+          "Blog / actualités",
+          "Accessibilité renforcée"
+        ],
+        "hypotheses": []
+      },
+      {
+        "id": "flow_07",
+        "nom": "Découvrir la filière (professionnel) et comprendre l’intérêt de l’annuaire",
+        "description": "Première visite pro : comprendre la mission, les critères/périmètre de l’annuaire, et comment partager le site aux patientes.",
+        "profil_id": "profil_02",
+        "categorie": "decouverte",
+        "objectif_du_flow": "Renforcer la crédibilité de la filière et clarifier l’usage de l’annuaire côté pro.",
+        "point_entree": {
+          "type": "lien_externe",
+          "description": "Lien envoyé par un partenaire / institution ou recherche Google."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Arriver sur la page “Filière / À propos”",
+            "page_ou_ecran": "À propos / Filière",
+            "elements_impliques": [
+              "menu",
+              "contenu structuré"
+            ],
+            "resultat_attendu": "Comprendre la mission, la gouvernance et le périmètre."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Cliquer sur “Annuaire des professionnels”",
+            "page_ou_ecran": "Annuaire — Listing",
+            "elements_impliques": [
+              "CTA",
+              "menu"
+            ],
+            "resultat_attendu": "Voir comment l’annuaire se présente côté patientes."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "Ouvrir une fiche pro et vérifier les informations affichées",
+            "page_ou_ecran": "Fiche professionnel",
+            "elements_impliques": [
+              "liste",
+              "lien fiche"
+            ],
+            "resultat_attendu": "Évaluer la qualité/structure de la fiche."
+          },
+          {
+            "numero": 4,
+            "action_utilisateur": "Copier l’URL de la fiche ou utiliser un bouton “Partager” (si présent)",
+            "page_ou_ecran": "Fiche professionnel",
+            "elements_impliques": [
+              "bouton partager",
+              "copie lien"
+            ],
+            "resultat_attendu": "Pouvoir envoyer un lien fiable à une patiente."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 3,
+            "condition": "si le professionnel constate une information incorrecte ou manquante",
+            "si_vrai": {
+              "etape_suivante": null,
+              "description": "Il passe par la demande de modification de fiche (contact / contribution)."
+            },
+            "si_faux": {
+              "etape_suivante": 4,
+              "description": "Il partage la fiche telle quelle.",
+              "page_destination": "Fiche professionnel"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "fiche non trouvée / annuaire indisponible",
+            "message_utilisateur": "L’annuaire est temporairement indisponible.",
+            "action_systeme": "Afficher une page d’état et proposer de réessayer."
+          }
+        ],
+        "point_sortie": {
+          "type": "redirection",
+          "description": "Partage de la fiche ou bascule vers demande de mise à jour."
+        },
+        "pages_impliquees": [
+          "À propos / Filière",
+          "Annuaire — Listing",
+          "Fiche professionnel"
+        ],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées (Comprendre, Parcours, Filière, Services)",
+          "Annuaire des professionnels de santé (listings + fiches)"
+        ],
+        "hypotheses": [
+          "La page “Filière” précisera le périmètre de l’annuaire et la logique de mise à jour (recommandé dans la stratégie)."
+        ]
+      },
+      {
+        "id": "flow_08",
+        "nom": "Adhérer à la filière EndoCorse (parcours en 3 étapes)",
+        "description": "Parcours d’auto-inscription d’un professionnel à la filière : QCM → signature de charte → création du profil (incluant le niveau de prise en charge), avec possibilité de reprendre plus tard. À la confirmation, publication dans l’annuaire public.",
+        "profil_id": "profil_02",
+        "categorie": "conversion",
+        "objectif_du_flow": "Permettre l’adhésion initiale d’un professionnel, enregistrer ses informations dans la base locale et publier la fiche dans l’annuaire public après validation des prérequis.",
+        "point_entree": {
+          "type": "acces_direct",
+          "description": "Lien “Mettre à jour ma fiche” depuis la fiche pro ou depuis la page À propos."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Ouvrir la page “Adhérer à la filière” et lire les prérequis (durée, étapes, email pro requis)",
+            "page_ou_ecran": "Adhérer à la filière — Explication",
+            "elements_impliques": [
+              "menu",
+              "contenu",
+              "CTA commencer"
+            ],
+            "resultat_attendu": "Comprendre le parcours d’adhésion et ses conditions."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Saisir son email professionnel et cliquer sur “Démarrer le QCM”",
+            "page_ou_ecran": "Adhérer à la filière — Démarrage",
+            "elements_impliques": [
+              "champ email",
+              "validation",
+              "anti-spam",
+              "CTA démarrer"
+            ],
+            "resultat_attendu": "Création d’une session d’adhésion + envoi d’un email de lien de reprise (si prévu)."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "Ouvrir le QCM, répondre aux questions, puis soumettre",
+            "page_ou_ecran": "Adhésion — Étape 1 : QCM",
+            "elements_impliques": [
+              "QCM",
+              "pagination",
+              "bouton soumettre"
+            ],
+            "resultat_attendu": "QCM envoyé pour correction automatique."
+          },
+          {
+            "numero": 4,
+            "action_utilisateur": "Consulter l’email de résultats du QCM",
+            "page_ou_ecran": "Email — Résultats QCM",
+            "elements_impliques": [
+              "email",
+              "score",
+              "liens"
+            ],
+            "resultat_attendu": "Recevoir le résultat et, si réussi, un lien vers la signature de charte."
+          },
+          {
+            "numero": 5,
+            "action_utilisateur": "Si QCM réussi : ouvrir la page de charte et signer",
+            "page_ou_ecran": "Adhésion — Étape 2 : Signature de la charte",
+            "elements_impliques": [
+              "document charte",
+              "case d’acceptation",
+              "signature (nom/prénom)",
+              "CTA signer"
+            ],
+            "resultat_attendu": "Charte signée et enregistrée."
+          },
+          {
+            "numero": 6,
+            "action_utilisateur": "Renseigner les informations du profil professionnel (incluant le niveau de prise en charge 1/2/3) et enregistrer (possibilité de sauvegarder un brouillon)",
+            "page_ou_ecran": "Adhésion — Étape 3 : Création du profil",
+            "elements_impliques": [
+              "formulaire multi-champs",
+              "sélection niveau de prise en charge",
+              "upload photo/logo",
+              "bouton enregistrer",
+              "sauvegarde brouillon"
+            ],
+            "resultat_attendu": "Profil complété et stocké dans la base locale."
+          },
+          {
+            "numero": 7,
+            "action_utilisateur": "Lire la confirmation, télécharger les documents et comprendre que la fiche est publiée dans l’annuaire public",
+            "page_ou_ecran": "Confirmation d’adhésion",
+            "elements_impliques": [
+              "message de confirmation",
+              "liens de téléchargement",
+              "récapitulatif"
+            ],
+            "resultat_attendu": "Inscription confirmée, documents disponibles, équipe notifiée, fiche publiée."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 2,
+            "condition": "si l’email professionnel est invalide ou refusé (domaine non pro / règle à définir)",
+            "si_vrai": {
+              "etape_suivante": 2,
+              "description": "Afficher une erreur et demander une adresse email professionnelle valide."
+            },
+            "si_faux": {
+              "etape_suivante": 3,
+              "description": "Démarrer le QCM.",
+              "page_destination": "Adhésion — Étape 1 : QCM"
+            }
+          },
+          {
+            "apres_etape": 4,
+            "condition": "si le QCM est réussi (seuil de passage à définir)",
+            "si_vrai": {
+              "etape_suivante": 5,
+              "description": "Accès à la signature de charte via lien email."
+            },
+            "si_faux": {
+              "etape_suivante": 3,
+              "description": "Activer un délai de ré-essai (cooldown) avant de pouvoir repasser le QCM.",
+              "page_destination": "Adhésion — Étape 1 : QCM"
+            }
+          },
+          {
+            "apres_etape": 6,
+            "condition": "si le professionnel n’a pas de numéro RPPS/ADELI",
+            "si_vrai": {
+              "etape_suivante": 6,
+              "description": "Afficher un champ d’identification alternatif (à définir) et permettre de continuer."
+            },
+            "si_faux": {
+              "etape_suivante": 7,
+              "description": "Passer à la confirmation d’adhésion.",
+              "page_destination": "Confirmation d’adhésion"
+            }
+          },
+          {
+            "apres_etape": 6,
+            "condition": "si le professionnel quitte le parcours avant la fin",
+            "si_vrai": {
+              "etape_suivante": null,
+              "description": "Sauvegarder l’avancement et permettre une reprise ultérieure via lien/email.",
+              "page_destination": "Adhérer à la filière — Explication"
+            },
+            "si_faux": {
+              "etape_suivante": 7,
+              "description": "Continuer vers la confirmation.",
+              "page_destination": "Confirmation d’adhésion"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "champs manquants / pièce jointe trop lourde",
+            "message_utilisateur": "Merci de vérifier les informations indiquées.",
+            "action_systeme": "Validation + indication claire des limites (formats/poids)."
+          }
+        ],
+        "point_sortie": {
+          "type": "conversion",
+          "description": "Adhésion enregistrée en base locale, fiche publiée dans l’annuaire public, email de confirmation envoyé, notifications internes envoyées aux administrateurs."
+        },
+        "pages_impliquees": [
+          "Adhérer à la filière — Explication",
+          "Adhérer à la filière — Démarrage",
+          "Adhésion — Étape 1 : QCM",
+          "Email — Résultats QCM",
+          "Adhésion — Étape 2 : Signature de la charte",
+          "Adhésion — Étape 3 : Création du profil",
+          "Confirmation d’adhésion",
+          "Ressources — Documents d’adhésion (téléchargements)"
+        ],
+        "fonctionnalites_requises": [
+          "Formulaire de contact"
+        ],
+        "hypotheses": [
+          "Le parcours dure ~30 minutes et doit être reprenable : on suppose une “session d’adhésion” liée à l’email (lien de reprise ou code).",
+          "Le scoring du QCM est automatique avec un seuil de réussite à définir.",
+          "Le délai de ré-essai (cooldown) après échec est à définir et sera géré par workflow n8n en V1 (solution dev locale à terme).",
+          "La signature de charte se fait via une acceptation explicite + signature simple (saisie du nom) ; une e-sign avancée n’est pas prévue en V1.",
+          "Un identifiant alternatif au RPPS/ADELI est nécessaire pour certaines professions (à définir : numéro interne, SIRET, etc.).",
+          "Le niveau de prise en charge (1/2/3) est sélectionné à l’étape profil et affiché publiquement sur la fiche via un code couleur discret.",
+          "À la fin, la fiche est publiée dans l’annuaire public ; un email de confirmation inclut des documents à télécharger ; les notifications internes sont automatisées."
+        ]
+      },
+      {
+        "id": "flow_09",
+        "nom": "Rechercher un professionnel pour orienter une patiente et partager un lien",
+        "description": "Utiliser l’annuaire pour identifier un professionnel/structure et envoyer un lien fiable à une patiente.",
+        "profil_id": "profil_02",
+        "categorie": "specifique",
+        "objectif_du_flow": "Faciliter le relais d’orientation via un lien unique et crédible.",
+        "point_entree": {
+          "type": "acces_direct",
+          "description": "Accès direct à l’annuaire (favori, lien enregistré)."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Ouvrir l’annuaire",
+            "page_ou_ecran": "Annuaire — Listing",
+            "elements_impliques": [
+              "menu",
+              "listing"
+            ],
+            "resultat_attendu": "Accéder aux résultats."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Utiliser la recherche et les filtres pour cibler une spécialité, une zone et un niveau de prise en charge (1/2/3)",
+            "page_ou_ecran": "Annuaire — Listing",
+            "elements_impliques": [
+              "recherche",
+              "filtres"
+            ],
+            "resultat_attendu": "Identifier 1 à 3 options pertinentes."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "Ouvrir la fiche, vérifier le niveau 1/2/3 (badge couleur), puis copier le lien",
+            "page_ou_ecran": "Fiche professionnel",
+            "elements_impliques": [
+              "badge niveau (code couleur)",
+              "lien",
+              "bouton partager"
+            ],
+            "resultat_attendu": "Disposer d’un lien à envoyer."
+          },
+          {
+            "numero": 4,
+            "action_utilisateur": "Envoyer le lien à la patiente via son canal habituel (SMS, email)",
+            "page_ou_ecran": "Hors site",
+            "elements_impliques": [
+              "copie lien"
+            ],
+            "resultat_attendu": "La patiente reçoit un accès direct à la fiche."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 2,
+            "condition": "si aucun résultat",
+            "si_vrai": {
+              "etape_suivante": 2,
+              "description": "Ajuster filtres / élargir la zone."
+            },
+            "si_faux": {
+              "etape_suivante": 3,
+              "description": "Ouvrir une fiche et partager.",
+              "page_destination": "Fiche professionnel"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "annuaire inaccessible",
+            "message_utilisateur": "L’annuaire n’est pas accessible pour le moment.",
+            "action_systeme": "Afficher une page d’état + contacter la filière si besoin urgent."
+          }
+        ],
+        "point_sortie": {
+          "type": "redirection",
+          "description": "Sortie hors site après copie/partage du lien."
+        },
+        "pages_impliquees": [
+          "Annuaire — Listing",
+          "Fiche professionnel",
+          "Hors site"
+        ],
+        "fonctionnalites_requises": [
+          "Annuaire des professionnels de santé (listings + fiches)",
+          "Moteur de recherche + filtres sur l’annuaire"
+        ],
+        "hypotheses": [
+          "Un bouton “Partager” sur la fiche est optionnel ; sinon copie d’URL.",
+          "Le filtre “niveau de prise en charge” est disponible dans l’annuaire ; le badge de niveau est visible sur les fiches."
+        ]
+      },
+      {
+        "id": "flow_10",
+        "nom": "Consulter actualités/ressources de filière (professionnel) et rester informé",
+        "description": "Consulter les actualités et ressources, puis s’abonner à la newsletter pour être informé.",
+        "profil_id": "profil_02",
+        "categorie": "fidelisation",
+        "objectif_du_flow": "Renforcer l’engagement des professionnels et la cohérence de la filière.",
+        "point_entree": {
+          "type": "email",
+          "description": "Lien depuis une communication interne/partenaire vers une actualité ou une ressource."
+        },
+        "etapes": [
+          {
+            "numero": 1,
+            "action_utilisateur": "Ouvrir une actualité de filière",
+            "page_ou_ecran": "Actualité — Détail",
+            "elements_impliques": [
+              "contenu"
+            ],
+            "resultat_attendu": "Lire les informations importantes."
+          },
+          {
+            "numero": 2,
+            "action_utilisateur": "Cliquer sur “Ressources” pour télécharger un document",
+            "page_ou_ecran": "Ressources",
+            "elements_impliques": [
+              "lien",
+              "liste"
+            ],
+            "resultat_attendu": "Accéder à un document utile."
+          },
+          {
+            "numero": 3,
+            "action_utilisateur": "S’inscrire à la newsletter (optionnel)",
+            "page_ou_ecran": "Ressources",
+            "elements_impliques": [
+              "bloc newsletter"
+            ],
+            "resultat_attendu": "Être informé des prochaines mises à jour."
+          }
+        ],
+        "embranchements": [
+          {
+            "apres_etape": 2,
+            "condition": "si le professionnel veut être notifié des mises à jour",
+            "si_vrai": {
+              "etape_suivante": 3,
+              "description": "Il s’inscrit à la newsletter."
+            },
+            "si_faux": {
+              "etape_suivante": null,
+              "description": "Il quitte le site après téléchargement/lecture.",
+              "page_destination": "Ressources"
+            }
+          }
+        ],
+        "etats_erreur": [
+          {
+            "declencheur": "ressource indisponible",
+            "message_utilisateur": "Ce document n’est plus disponible.",
+            "action_systeme": "Proposer des alternatives + notifier l’administration."
+          }
+        ],
+        "point_sortie": {
+          "type": "abandon",
+          "description": "Fin de consultation après lecture/téléchargement."
+        },
+        "pages_impliquees": [
+          "Actualité — Détail",
+          "Ressources",
+          "Confirmation newsletter"
+        ],
+        "fonctionnalites_requises": [
+          "Blog / actualités",
+          "Téléchargement de documents",
+          "Newsletter"
+        ],
+        "hypotheses": [
+          "La newsletter couvre à la fois patientes et professionnels (segmentation éventuelle à confirmer)."
+        ]
+      }
+    ],
+    "connexions_entre_flows": [
+      {
+        "flow_source_id": "flow_01",
+        "flow_destination_id": "flow_02",
+        "point_de_liaison": "CTA “Trouver un professionnel”",
+        "condition": "si la visiteuse souhaite être orientée vers un interlocuteur"
+      },
+      {
+        "flow_source_id": "flow_02",
+        "flow_destination_id": "flow_03",
+        "point_de_liaison": "CTA “Demander une orientation / contacter EndoCorse”",
+        "condition": "si la visiteuse n’a pas trouvé ou veut être accompagnée"
+      },
+      {
+        "flow_source_id": "flow_04",
+        "flow_destination_id": "flow_05",
+        "point_de_liaison": "Bloc newsletter sur Ressources",
+        "condition": "si la visiteuse souhaite recevoir les prochaines ressources/actualités"
+      },
+      {
+        "flow_source_id": "flow_07",
+        "flow_destination_id": "flow_08",
+        "point_de_liaison": "Lien “Mettre à jour ma fiche”",
+        "condition": "si une correction/ajout est nécessaire"
+      },
+      {
+        "flow_source_id": "flow_09",
+        "flow_destination_id": "flow_03",
+        "point_de_liaison": "Lien “Contacter la filière” depuis l’annuaire/fiche",
+        "condition": "si besoin d’appui d’orientation ou de clarification"
+      }
+    ],
+    "navigation_par_profil": [
+      {
+        "profil_id": "profil_01",
+        "flows_principaux": [
+          "flow_01",
+          "flow_02",
+          "flow_03"
+        ],
+        "priorite_contenu": [
+          "Comprendre l’endométriose",
+          "Parcours de prise en charge",
+          "Ressources",
+          "Actualités"
+        ],
+        "priorite_fonctionnalites": [
+          "Annuaire + recherche/filtres",
+          "Formulaire de contact",
+          "Téléchargement documents",
+          "Newsletter"
+        ],
+        "parcours_type": "Arrivée (souvent mobile) → compréhension rapide → accès annuaire → consultation fiche → contact si besoin → ressources / inscription newsletter."
+      },
+      {
+        "profil_id": "profil_02",
+        "flows_principaux": [
+          "flow_07",
+          "flow_09",
+          "flow_08"
+        ],
+        "priorite_contenu": [
+          "Filière / À propos",
+          "Actualités",
+          "Ressources"
+        ],
+        "priorite_fonctionnalites": [
+          "Annuaire + fiches",
+          "Adhésion (QCM + charte + profil)",
+          "Mise à jour fiche (workflow)",
+          "Newsletter"
+        ],
+        "parcours_type": "Arrivée (desktop) → comprend la filière → adhère (QCM, charte, profil) → fiche publiée dans l’annuaire public ; ou consulte/partage une fiche → demande de mise à jour si nécessaire → suit les actualités."
+      }
+    ],
+    "alertes": [
+      {
+        "type": "manque",
+        "section": "pages_legales",
+        "champ": "mentions_legales",
+        "message": "Adresse postale de la structure non confirmée (nécessaire pour mentions légales)."
+      },
+      {
+        "type": "recommandation",
+        "section": "integrations",
+        "champ": "newsletter_crm",
+        "message": "Outil newsletter/CRM non choisi : nécessaire pour confirmer le double opt-in et la gestion RGPD."
+      },
+      {
+        "type": "risque",
+        "section": "fonctionnalites",
+        "champ": "hebergement_maintenance",
+        "message": "Hébergement + maintenance sont essentiels côté technique mais ne se traduisent pas par un parcours utilisateur : prévoir une communication rassurante (ex. 'site sécurisé', 'données protégées') dans les contenus."
+      },
+      {
+        "type": "hypothese",
+        "section": "annuaire",
+        "champ": "taxonomie_filtres",
+        "message": "Les filtres exacts de l’annuaire (spécialité, localisation, modalités d’orientation, type de prise en charge) et leurs valeurs doivent être définis/validés."
+      },
+      {
+        "type": "hypothese",
+        "section": "annuaire",
+        "champ": "connexion_ror",
+        "message": "Connexion/synchronisation ROR national : prévue à terme, mais la V1 suppose seulement une structure de données compatible (pas de synchro active)."
+      },
+      {
+        "type": "hypothese",
+        "section": "annuaire",
+        "champ": "module_contribution",
+        "message": "Le module de contribution/mise à jour encadrée n’est pas confirmé : la V1 suppose un formulaire de demande + validation manuelle."
+      },
+      {
+        "type": "hypothese",
+        "section": "annuaire",
+        "champ": "filtre_niveau_prise_en_charge",
+        "message": "Ajouter “niveau de prise en charge (1/2/3)” comme filtre dans l’annuaire (aligné sur le champ du profil issu de l’adhésion)."
+      },
+      {
+        "type": "hypothese",
+        "section": "annuaire",
+        "champ": "contact_uniquement_niveau_1",
+        "message": "Règle métier : seuls les professionnels de niveau 1 sont joignables directement. Définir l’affichage/CTA sur les fiches niveau 2/3 (message d’orientation vers niveau 1 ou contact filière)."
+      }
+    ]
+  }
+}

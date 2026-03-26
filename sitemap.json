@@ -1,0 +1,2030 @@
+{
+  "sitemap": {
+    "meta": {
+      "fichier": "sitemap.json",
+      "version": "1.0",
+      "gpt": "GPT-C",
+      "etape_process": "9 — Sitemap Stage",
+      "date_generation": "2026-03-23",
+      "source": "strategie.json + userflows.json (+ existant preprod si fourni)",
+      "base_existante": true,
+      "client": {
+        "societe": "Réseau EndoCorse",
+        "secteur": "santé"
+      },
+      "stats": {
+        "total_pages": 45,
+        "pages_statiques": 24,
+        "pages_dynamiques": 7,
+        "templates_uniques": 22,
+        "profondeur_max": 3
+      }
+    },
+    "pages": [
+      {
+        "id": "page_accueil",
+        "nom": "Accueil",
+        "slug_suggere": "/",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_home",
+        "type_contenu": "statique",
+        "description": "Page d’accueil du site EndoCorse avec accès rapides vers annuaire et contenus clés.",
+        "objectif_principal": "Présenter EndoCorse, orienter rapidement vers Annuaire et contenus prioritaires.",
+        "flows_associes": [
+          "flow_01",
+          "flow_05"
+        ],
+        "fonctionnalites_requises": [
+          "Accessibilité renforcée"
+        ],
+        "est_dans_nav_principale": true,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_endocorse",
+        "nom": "EndoCorse",
+        "slug_suggere": "/endocorse",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_hub_section",
+        "type_contenu": "statique",
+        "description": "Page d’entrée éditoriale pour la section EndoCorse (si page hub nécessaire).",
+        "objectif_principal": "Donner un accès clair aux pages de la filière (qui sommes-nous, actualités, partenaires, congrès).",
+        "flows_associes": [
+          "flow_07"
+        ],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": true,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_qui_sommes_nous",
+        "nom": "Qui sommes-nous ?",
+        "slug_suggere": "/endocorse/qui-sommes-nous",
+        "niveau": 2,
+        "parent_id": "page_endocorse",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Présentation de la filière, missions, gouvernance, acteurs et perspectives.",
+        "objectif_principal": "Renforcer la crédibilité et expliquer la filière.",
+        "flows_associes": [
+          "flow_07"
+        ],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_formations_evenements",
+        "nom": "Formations et Événements",
+        "slug_suggere": "/endocorse/formations-evenements",
+        "niveau": 2,
+        "parent_id": "page_endocorse",
+        "type_template": "tpl_listing_evenements",
+        "type_contenu": "listing",
+        "description": "Liste des actualités, formations et événements de la filière.",
+        "objectif_principal": "Informer et inciter au retour régulier.",
+        "flows_associes": [
+          "flow_06"
+        ],
+        "fonctionnalites_requises": [
+          "Blog / actualités",
+          "Newsletter"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_evenement_detail",
+        "nom": "Actualité / Événement — Détail",
+        "slug_suggere": "/endocorse/formations-evenements/{slug}",
+        "niveau": 3,
+        "parent_id": "page_formations_evenements",
+        "type_template": "tpl_detail_evenement",
+        "type_contenu": "fiche",
+        "description": "Page détail d’une actualité/événement.",
+        "objectif_principal": "Consulter une publication et découvrir d’autres contenus.",
+        "flows_associes": [
+          "flow_06"
+        ],
+        "fonctionnalites_requises": [
+          "Blog / actualités"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_partenaires",
+        "nom": "Partenaires",
+        "slug_suggere": "/endocorse/partenaires",
+        "niveau": 2,
+        "parent_id": "page_endocorse",
+        "type_template": "tpl_page_editoriale_simple",
+        "type_contenu": "statique",
+        "description": "Présentation des partenaires institutionnels et associatifs.",
+        "objectif_principal": "Renforcer la crédibilité par les partenariats.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_congres",
+        "nom": "Congrès",
+        "slug_suggere": "/endocorse/congres",
+        "niveau": 2,
+        "parent_id": "page_endocorse",
+        "type_template": "tpl_page_editoriale_simple",
+        "type_contenu": "statique",
+        "description": "Informations et contenus liés aux congrès.",
+        "objectif_principal": "Informer sur les congrès et ressources associées.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_mentions_legales",
+        "nom": "Mentions légales",
+        "slug_suggere": "/mentions-legales",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_legal",
+        "type_contenu": "systeme",
+        "description": "Informations légales obligatoires.",
+        "objectif_principal": "Conformité légale.",
+        "flows_associes": [
+          "flow_03"
+        ],
+        "fonctionnalites_requises": [
+          "Pages légales (mentions légales, politique de confidentialité)"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": true,
+        "priorite": "basse"
+      },
+      {
+        "id": "page_endometriose",
+        "nom": "L'endométriose",
+        "slug_suggere": "/endometriose",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_hub_section",
+        "type_contenu": "statique",
+        "description": "Page d’entrée éditoriale pour la section Endométriose.",
+        "objectif_principal": "Accéder aux contenus de compréhension et d’orientation.",
+        "flows_associes": [
+          "flow_01"
+        ],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": true,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_mieux_comprendre",
+        "nom": "Mieux comprendre la maladie",
+        "slug_suggere": "/endometriose/mieux-comprendre-la-maladie",
+        "niveau": 2,
+        "parent_id": "page_endometriose",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Information vulgarisée et structurée sur l’endométriose (définition, symptômes, etc.).",
+        "objectif_principal": "Comprendre la maladie avec des sources fiables.",
+        "flows_associes": [
+          "flow_01"
+        ],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_diagnostic_traitements",
+        "nom": "Diagnostic et traitements",
+        "slug_suggere": "/endometriose/diagnostic-et-traitements",
+        "niveau": 2,
+        "parent_id": "page_endometriose",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Contenus sur diagnostic, examens, traitements.",
+        "objectif_principal": "Informer sur les options de diagnostic/traitement.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_prise_en_charge_medicale",
+        "nom": "Prise en charge médicale",
+        "slug_suggere": "/endometriose/prise-en-charge-medicale",
+        "niveau": 2,
+        "parent_id": "page_endometriose",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Organisation de la prise en charge et modalités médicales.",
+        "objectif_principal": "Aider à comprendre la prise en charge.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_vivre_avec",
+        "nom": "Vivre avec la maladie",
+        "slug_suggere": "/endometriose/vivre-avec-la-maladie",
+        "niveau": 2,
+        "parent_id": "page_endometriose",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Vie quotidienne, douleurs, travail, intimité, etc.",
+        "objectif_principal": "Apporter des repères pratiques.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_outils_ressources",
+        "nom": "Outils & ressources cliniques",
+        "slug_suggere": "/endometriose/outils-ressources-cliniques",
+        "niveau": 2,
+        "parent_id": "page_endometriose",
+        "type_template": "tpl_listing_ressources",
+        "type_contenu": "listing",
+        "description": "Bibliothèque de ressources et documents utiles (PDF, liens, outils).",
+        "objectif_principal": "Donner accès à des ressources fiables.",
+        "flows_associes": [
+          "flow_04"
+        ],
+        "fonctionnalites_requises": [
+          "Téléchargement de documents"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_ressource_detail",
+        "nom": "Ressource — Détail",
+        "slug_suggere": "/endometriose/outils-ressources-cliniques/{slug}",
+        "niveau": 3,
+        "parent_id": "page_outils_ressources",
+        "type_template": "tpl_detail_ressource",
+        "type_contenu": "fiche",
+        "description": "Détail d’une ressource avec téléchargement.",
+        "objectif_principal": "Télécharger un document utile.",
+        "flows_associes": [
+          "flow_04"
+        ],
+        "fonctionnalites_requises": [
+          "Téléchargement de documents"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_pro",
+        "nom": "Vous êtes un professionnel de santé",
+        "slug_suggere": "/professionnels",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_hub_section",
+        "type_contenu": "statique",
+        "description": "Entrée dédiée aux professionnels : adhésion, formation, recherche.",
+        "objectif_principal": "Accéder aux infos pro et à l’adhésion.",
+        "flows_associes": [
+          "flow_07",
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées",
+          "Parcours d’adhésion des professionnels"
+        ],
+        "est_dans_nav_principale": true,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_comment_adherer",
+        "nom": "Comment adhérer à la filière",
+        "slug_suggere": "/professionnels/comment-adherer",
+        "niveau": 2,
+        "parent_id": "page_pro",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Présentation détaillée du processus d’adhésion (QCM → Charte → Profil).",
+        "objectif_principal": "Comprendre et démarrer l’adhésion.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Parcours d’adhésion des professionnels"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_pourquoi_rejoindre",
+        "nom": "Pourquoi nous rejoindre",
+        "slug_suggere": "/professionnels/pourquoi-nous-rejoindre",
+        "niveau": 2,
+        "parent_id": "page_pro",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Bénéfices et objectifs pour les professionnels.",
+        "objectif_principal": "Convaincre de rejoindre la filière.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_se_former",
+        "nom": "Se former",
+        "slug_suggere": "/professionnels/se-former",
+        "niveau": 2,
+        "parent_id": "page_pro",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Accès aux formations (peut renvoyer vers Formations et Événements).",
+        "objectif_principal": "Trouver des formations.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_recherche_clinique",
+        "nom": "La recherche clinique",
+        "slug_suggere": "/professionnels/la-recherche-clinique",
+        "niveau": 2,
+        "parent_id": "page_pro",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Informations sur la recherche clinique.",
+        "objectif_principal": "Informer sur la recherche.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_patiente",
+        "nom": "Vous êtes une patiente",
+        "slug_suggere": "/patientes",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_hub_section",
+        "type_contenu": "statique",
+        "description": "Entrée dédiée aux patientes : orientation, quotidien, associations, FAQ, ETP.",
+        "objectif_principal": "S’orienter et trouver des informations pratiques.",
+        "flows_associes": [
+          "flow_01",
+          "flow_02",
+          "flow_03"
+        ],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées",
+          "Annuaire des professionnels de santé (listings + fiches)"
+        ],
+        "est_dans_nav_principale": true,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_ou_me_soigner",
+        "nom": "Où me soigner",
+        "slug_suggere": "/patientes/ou-me-soigner",
+        "niveau": 2,
+        "parent_id": "page_patiente",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Centres et parcours de soins en Corse ; conseils RDV.",
+        "objectif_principal": "Savoir où consulter et comment prendre RDV.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_parcours_prise_en_charge",
+        "nom": "Parcours de prise en charge",
+        "slug_suggere": "/patientes/parcours-de-prise-en-charge",
+        "niveau": 2,
+        "parent_id": "page_patiente",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Vue d’ensemble du parcours et des étapes d’orientation.",
+        "objectif_principal": "Comprendre les étapes et être orientée.",
+        "flows_associes": [
+          "flow_01"
+        ],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_mon_quotidien",
+        "nom": "Mon quotidien",
+        "slug_suggere": "/patientes/mon-quotidien",
+        "niveau": 2,
+        "parent_id": "page_patiente",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Conseils et repères pour la vie quotidienne.",
+        "objectif_principal": "Aider au quotidien.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_associations",
+        "nom": "Les associations de patientes",
+        "slug_suggere": "/patientes/les-associations-de-patientes",
+        "niveau": 2,
+        "parent_id": "page_patiente",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Annuaire/liste d’associations et ressources associatives.",
+        "objectif_principal": "Orienter vers les associations.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_faq",
+        "nom": "Foire aux questions",
+        "slug_suggere": "/patientes/foire-aux-questions",
+        "niveau": 2,
+        "parent_id": "page_patiente",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "FAQ détaillée.",
+        "objectif_principal": "Répondre aux questions fréquentes.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_etp",
+        "nom": "Éducation thérapeutique patiente",
+        "slug_suggere": "/patientes/education-therapeutique-patiente",
+        "niveau": 2,
+        "parent_id": "page_patiente",
+        "type_template": "tpl_page_editoriale_sidebar",
+        "type_contenu": "statique",
+        "description": "Informations sur l’ETP.",
+        "objectif_principal": "Accéder à l’ETP.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [
+          "Pages éditoriales structurées"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_annuaire",
+        "nom": "Annuaire des soignants",
+        "slug_suggere": "/annuaire",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_listing_annuaire",
+        "type_contenu": "listing",
+        "description": "Recherche et filtres sur les professionnels de santé (niveau 1/2/3).",
+        "objectif_principal": "Trouver un professionnel/structure.",
+        "flows_associes": [
+          "flow_01",
+          "flow_02",
+          "flow_07"
+        ],
+        "fonctionnalites_requises": [
+          "Annuaire des professionnels de santé (listings + fiches)",
+          "Moteur de recherche + filtres sur l’annuaire"
+        ],
+        "est_dans_nav_principale": true,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_fiche_professionnel",
+        "nom": "Fiche professionnel",
+        "slug_suggere": "/annuaire/{slug}",
+        "niveau": 2,
+        "parent_id": "page_annuaire",
+        "type_template": "tpl_fiche_professionnel",
+        "type_contenu": "fiche",
+        "description": "Détail d’un professionnel avec badge niveau 1/2/3 et modalités d’orientation.",
+        "objectif_principal": "Vérifier les infos et décider d’une action.",
+        "flows_associes": [
+          "flow_02",
+          "flow_07"
+        ],
+        "fonctionnalites_requises": [
+          "Annuaire des professionnels de santé (listings + fiches)"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_contact",
+        "nom": "Contact",
+        "slug_suggere": "/contact",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_contact_form",
+        "type_contenu": "formulaire",
+        "description": "Formulaire de demande d’information/orientation (RGPD + anti-spam).",
+        "objectif_principal": "Permettre une demande d’orientation.",
+        "flows_associes": [
+          "flow_03"
+        ],
+        "fonctionnalites_requises": [
+          "Formulaire de contact",
+          "Pages légales (mentions légales, politique de confidentialité)"
+        ],
+        "est_dans_nav_principale": true,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_confirmation_contact",
+        "nom": "Confirmation contact",
+        "slug_suggere": "/contact/confirmation",
+        "niveau": 2,
+        "parent_id": "page_contact",
+        "type_template": "tpl_confirmation",
+        "type_contenu": "systeme",
+        "description": "Message de confirmation après envoi du formulaire.",
+        "objectif_principal": "Confirmer la prise en compte.",
+        "flows_associes": [
+          "flow_03"
+        ],
+        "fonctionnalites_requises": [],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_confirmation_newsletter",
+        "nom": "Confirmation newsletter",
+        "slug_suggere": "/newsletter/confirmation",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_confirmation",
+        "type_contenu": "systeme",
+        "description": "Page de confirmation double opt-in newsletter.",
+        "objectif_principal": "Confirmer l’abonnement newsletter.",
+        "flows_associes": [
+          "flow_05"
+        ],
+        "fonctionnalites_requises": [
+          "Newsletter"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "basse"
+      },
+      {
+        "id": "page_adherer_cta",
+        "nom": "Adhérer à la filière",
+        "slug_suggere": "/adherer",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_hub_adhesion",
+        "type_contenu": "statique",
+        "description": "Point d’entrée CTA header vers l’adhésion professionnelle.",
+        "objectif_principal": "Démarrer le parcours d’adhésion.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Parcours d’adhésion des professionnels"
+        ],
+        "est_dans_nav_principale": true,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_adherer_explication",
+        "nom": "Adhérer à la filière — Explication",
+        "slug_suggere": "/adherer/explication",
+        "niveau": 2,
+        "parent_id": "page_adherer_cta",
+        "type_template": "tpl_page_editoriale_simple",
+        "type_contenu": "statique",
+        "description": "Explication détaillée du processus et prérequis.",
+        "objectif_principal": "Comprendre avant de démarrer.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Parcours d’adhésion des professionnels"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_adherer_demarrage",
+        "nom": "Adhérer à la filière — Démarrage",
+        "slug_suggere": "/adherer/demarrage",
+        "niveau": 2,
+        "parent_id": "page_adherer_cta",
+        "type_template": "tpl_adhesion_start",
+        "type_contenu": "formulaire",
+        "description": "Démarrage : email pro + mot de passe (compte/session) ou lien de reprise.",
+        "objectif_principal": "Créer une session et commencer le QCM.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Parcours d’adhésion des professionnels"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_adhesion_qcm",
+        "nom": "Adhésion — Étape 1 : QCM",
+        "slug_suggere": "/adherer/qcm",
+        "niveau": 2,
+        "parent_id": "page_adherer_cta",
+        "type_template": "tpl_adhesion_qcm",
+        "type_contenu": "formulaire",
+        "description": "Questionnaire de validation des connaissances.",
+        "objectif_principal": "Passer le QCM.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Parcours d’adhésion des professionnels"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_email_resultats_qcm",
+        "nom": "Email — Résultats QCM",
+        "slug_suggere": "/hors-site/email-resultats-qcm",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_system_message",
+        "type_contenu": "systeme",
+        "description": "Écran de référence 'hors site' : email transactionnel contenant résultat QCM et liens.",
+        "objectif_principal": "Représenter l’étape email dans les flows.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Emails transactionnels"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "basse"
+      },
+      {
+        "id": "page_adhesion_charte",
+        "nom": "Adhésion — Étape 2 : Signature de la charte",
+        "slug_suggere": "/adherer/charte",
+        "niveau": 2,
+        "parent_id": "page_adherer_cta",
+        "type_template": "tpl_adhesion_charte",
+        "type_contenu": "formulaire",
+        "description": "Lecture et acceptation/signature de la charte.",
+        "objectif_principal": "Signer la charte.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Parcours d’adhésion des professionnels"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_adhesion_profil",
+        "nom": "Adhésion — Étape 3 : Création du profil",
+        "slug_suggere": "/adherer/profil",
+        "niveau": 2,
+        "parent_id": "page_adherer_cta",
+        "type_template": "tpl_adhesion_profil",
+        "type_contenu": "formulaire",
+        "description": "Formulaire de création de profil (RPPS, spécialité, niveau 1/2/3, etc.).",
+        "objectif_principal": "Créer/mettre à jour la fiche pro.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Base de données locale des professionnels (gestion + champs évolutifs + temporalité)"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_docs_adhesion",
+        "nom": "Ressources — Documents d’adhésion (téléchargements)",
+        "slug_suggere": "/adherer/documents",
+        "niveau": 2,
+        "parent_id": "page_adherer_cta",
+        "type_template": "tpl_listing_docs_adhesion",
+        "type_contenu": "listing",
+        "description": "Documents à télécharger liés à l’adhésion (charte, justificatifs, etc.).",
+        "objectif_principal": "Accéder aux documents utiles.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [
+          "Téléchargement de documents"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "moyenne"
+      },
+      {
+        "id": "page_confirmation_adhesion",
+        "nom": "Confirmation d’adhésion",
+        "slug_suggere": "/adherer/confirmation",
+        "niveau": 2,
+        "parent_id": "page_adherer_cta",
+        "type_template": "tpl_confirmation",
+        "type_contenu": "systeme",
+        "description": "Confirmation de fin de parcours d’adhésion et informations de publication annuaire public.",
+        "objectif_principal": "Confirmer l’adhésion.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "haute"
+      },
+      {
+        "id": "page_confidentialite",
+        "nom": "Politique de confidentialité",
+        "slug_suggere": "/politique-de-confidentialite",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_legal",
+        "type_contenu": "systeme",
+        "description": "Politique de confidentialité RGPD.",
+        "objectif_principal": "Informer sur l’usage des données.",
+        "flows_associes": [
+          "flow_03",
+          "flow_05"
+        ],
+        "fonctionnalites_requises": [
+          "Pages légales (mentions légales, politique de confidentialité)"
+        ],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": true,
+        "priorite": "basse"
+      },
+      {
+        "id": "page_sitemap",
+        "nom": "Sitemap",
+        "slug_suggere": "/sitemap",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_system_sitemap",
+        "type_contenu": "systeme",
+        "description": "Page plan du site (listing des pages).",
+        "objectif_principal": "Permettre l’accès au plan du site.",
+        "flows_associes": [],
+        "fonctionnalites_requises": [],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": true,
+        "priorite": "basse"
+      },
+      {
+        "id": "page_404",
+        "nom": "Page 404",
+        "slug_suggere": "/404",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_404",
+        "type_contenu": "systeme",
+        "description": "Page erreur 404 avec suggestions de navigation.",
+        "objectif_principal": "Gérer les URL invalides.",
+        "flows_associes": [
+          "flow_02",
+          "flow_06"
+        ],
+        "fonctionnalites_requises": [],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "basse"
+      },
+      {
+        "id": "page_hors_site",
+        "nom": "Hors site",
+        "slug_suggere": "/hors-site",
+        "niveau": 1,
+        "parent_id": null,
+        "type_template": "tpl_system_message",
+        "type_contenu": "systeme",
+        "description": "Placeholder pour étapes se déroulant hors du site (emails, outils externes).",
+        "objectif_principal": "Représenter les étapes hors site dans les flows.",
+        "flows_associes": [
+          "flow_08"
+        ],
+        "fonctionnalites_requises": [],
+        "est_dans_nav_principale": false,
+        "est_dans_nav_footer": false,
+        "priorite": "basse"
+      }
+    ],
+    "arborescence": [
+      {
+        "id": "page_accueil",
+        "nom": "Accueil",
+        "enfants": []
+      },
+      {
+        "id": "page_adherer_cta",
+        "nom": "Adhérer à la filière",
+        "enfants": [
+          {
+            "id": "page_adherer_demarrage",
+            "nom": "Adhérer à la filière — Démarrage",
+            "enfants": []
+          },
+          {
+            "id": "page_adherer_explication",
+            "nom": "Adhérer à la filière — Explication",
+            "enfants": []
+          },
+          {
+            "id": "page_adhesion_qcm",
+            "nom": "Adhésion — Étape 1 : QCM",
+            "enfants": []
+          },
+          {
+            "id": "page_adhesion_charte",
+            "nom": "Adhésion — Étape 2 : Signature de la charte",
+            "enfants": []
+          },
+          {
+            "id": "page_adhesion_profil",
+            "nom": "Adhésion — Étape 3 : Création du profil",
+            "enfants": []
+          },
+          {
+            "id": "page_confirmation_adhesion",
+            "nom": "Confirmation d’adhésion",
+            "enfants": []
+          },
+          {
+            "id": "page_docs_adhesion",
+            "nom": "Ressources — Documents d’adhésion (téléchargements)",
+            "enfants": []
+          }
+        ]
+      },
+      {
+        "id": "page_annuaire",
+        "nom": "Annuaire des soignants",
+        "enfants": [
+          {
+            "id": "page_fiche_professionnel",
+            "nom": "Fiche professionnel",
+            "enfants": []
+          }
+        ]
+      },
+      {
+        "id": "page_confirmation_newsletter",
+        "nom": "Confirmation newsletter",
+        "enfants": []
+      },
+      {
+        "id": "page_contact",
+        "nom": "Contact",
+        "enfants": [
+          {
+            "id": "page_confirmation_contact",
+            "nom": "Confirmation contact",
+            "enfants": []
+          }
+        ]
+      },
+      {
+        "id": "page_email_resultats_qcm",
+        "nom": "Email — Résultats QCM",
+        "enfants": []
+      },
+      {
+        "id": "page_endocorse",
+        "nom": "EndoCorse",
+        "enfants": [
+          {
+            "id": "page_congres",
+            "nom": "Congrès",
+            "enfants": []
+          },
+          {
+            "id": "page_formations_evenements",
+            "nom": "Formations et Événements",
+            "enfants": [
+              {
+                "id": "page_evenement_detail",
+                "nom": "Actualité / Événement — Détail",
+                "enfants": []
+              }
+            ]
+          },
+          {
+            "id": "page_partenaires",
+            "nom": "Partenaires",
+            "enfants": []
+          },
+          {
+            "id": "page_qui_sommes_nous",
+            "nom": "Qui sommes-nous ?",
+            "enfants": []
+          }
+        ]
+      },
+      {
+        "id": "page_hors_site",
+        "nom": "Hors site",
+        "enfants": []
+      },
+      {
+        "id": "page_endometriose",
+        "nom": "L'endométriose",
+        "enfants": [
+          {
+            "id": "page_diagnostic_traitements",
+            "nom": "Diagnostic et traitements",
+            "enfants": []
+          },
+          {
+            "id": "page_mieux_comprendre",
+            "nom": "Mieux comprendre la maladie",
+            "enfants": []
+          },
+          {
+            "id": "page_outils_ressources",
+            "nom": "Outils & ressources cliniques",
+            "enfants": [
+              {
+                "id": "page_ressource_detail",
+                "nom": "Ressource — Détail",
+                "enfants": []
+              }
+            ]
+          },
+          {
+            "id": "page_prise_en_charge_medicale",
+            "nom": "Prise en charge médicale",
+            "enfants": []
+          },
+          {
+            "id": "page_vivre_avec",
+            "nom": "Vivre avec la maladie",
+            "enfants": []
+          }
+        ]
+      },
+      {
+        "id": "page_mentions_legales",
+        "nom": "Mentions légales",
+        "enfants": []
+      },
+      {
+        "id": "page_404",
+        "nom": "Page 404",
+        "enfants": []
+      },
+      {
+        "id": "page_confidentialite",
+        "nom": "Politique de confidentialité",
+        "enfants": []
+      },
+      {
+        "id": "page_sitemap",
+        "nom": "Sitemap",
+        "enfants": []
+      },
+      {
+        "id": "page_pro",
+        "nom": "Vous êtes un professionnel de santé",
+        "enfants": [
+          {
+            "id": "page_comment_adherer",
+            "nom": "Comment adhérer à la filière",
+            "enfants": []
+          },
+          {
+            "id": "page_recherche_clinique",
+            "nom": "La recherche clinique",
+            "enfants": []
+          },
+          {
+            "id": "page_pourquoi_rejoindre",
+            "nom": "Pourquoi nous rejoindre",
+            "enfants": []
+          },
+          {
+            "id": "page_se_former",
+            "nom": "Se former",
+            "enfants": []
+          }
+        ]
+      },
+      {
+        "id": "page_patiente",
+        "nom": "Vous êtes une patiente",
+        "enfants": [
+          {
+            "id": "page_faq",
+            "nom": "Foire aux questions",
+            "enfants": []
+          },
+          {
+            "id": "page_associations",
+            "nom": "Les associations de patientes",
+            "enfants": []
+          },
+          {
+            "id": "page_mon_quotidien",
+            "nom": "Mon quotidien",
+            "enfants": []
+          },
+          {
+            "id": "page_ou_me_soigner",
+            "nom": "Où me soigner",
+            "enfants": []
+          },
+          {
+            "id": "page_parcours_prise_en_charge",
+            "nom": "Parcours de prise en charge",
+            "enfants": []
+          },
+          {
+            "id": "page_etp",
+            "nom": "Éducation thérapeutique patiente",
+            "enfants": []
+          }
+        ]
+      }
+    ],
+    "navigation": {
+      "principale": [
+        {
+          "label": "EndoCorse",
+          "page_id": "page_endocorse",
+          "sous_menu": [
+            {
+              "label": "Qui sommes-nous ?",
+              "page_id": "page_qui_sommes_nous"
+            },
+            {
+              "label": "Formations et Événements",
+              "page_id": "page_formations_evenements"
+            },
+            {
+              "label": "Partenaires",
+              "page_id": "page_partenaires"
+            },
+            {
+              "label": "Congrès",
+              "page_id": "page_congres"
+            },
+            {
+              "label": "Mentions légales",
+              "page_id": "page_mentions_legales"
+            }
+          ]
+        },
+        {
+          "label": "L'endométriose",
+          "page_id": "page_endometriose",
+          "sous_menu": [
+            {
+              "label": "Mieux comprendre la maladie",
+              "page_id": "page_mieux_comprendre"
+            },
+            {
+              "label": "Diagnostic et traitements",
+              "page_id": "page_diagnostic_traitements"
+            },
+            {
+              "label": "Prise en charge médicale",
+              "page_id": "page_prise_en_charge_medicale"
+            },
+            {
+              "label": "Vivre avec la maladie",
+              "page_id": "page_vivre_avec"
+            },
+            {
+              "label": "Outils & ressources cliniques",
+              "page_id": "page_outils_ressources"
+            }
+          ]
+        },
+        {
+          "label": "Vous êtes un professionnel de santé",
+          "page_id": "page_pro",
+          "sous_menu": [
+            {
+              "label": "Comment adhérer à la filière",
+              "page_id": "page_comment_adherer"
+            },
+            {
+              "label": "Pourquoi nous rejoindre",
+              "page_id": "page_pourquoi_rejoindre"
+            },
+            {
+              "label": "Se former",
+              "page_id": "page_se_former"
+            },
+            {
+              "label": "La recherche clinique",
+              "page_id": "page_recherche_clinique"
+            }
+          ]
+        },
+        {
+          "label": "Vous êtes une patiente",
+          "page_id": "page_patiente",
+          "sous_menu": [
+            {
+              "label": "Où me soigner",
+              "page_id": "page_ou_me_soigner"
+            },
+            {
+              "label": "Parcours de prise en charge",
+              "page_id": "page_parcours_prise_en_charge"
+            },
+            {
+              "label": "Mon quotidien",
+              "page_id": "page_mon_quotidien"
+            },
+            {
+              "label": "Les associations de patientes",
+              "page_id": "page_associations"
+            },
+            {
+              "label": "Foire aux questions",
+              "page_id": "page_faq"
+            },
+            {
+              "label": "Éducation thérapeutique patiente",
+              "page_id": "page_etp"
+            }
+          ]
+        },
+        {
+          "label": "Adhérer à la filière",
+          "page_id": "page_adherer_cta",
+          "sous_menu": [
+            {
+              "label": "Adhérer à la filière — Explication",
+              "page_id": "page_adherer_explication"
+            },
+            {
+              "label": "Adhérer à la filière — Démarrage",
+              "page_id": "page_adherer_demarrage"
+            }
+          ]
+        },
+        {
+          "label": "Annuaire des soignants",
+          "page_id": "page_annuaire",
+          "sous_menu": []
+        },
+        {
+          "label": "Contact",
+          "page_id": "page_contact",
+          "sous_menu": []
+        }
+      ],
+      "footer": [
+        {
+          "groupe": "Réseau EndoCorse",
+          "liens": [
+            {
+              "label": "Qui sommes-nous ?",
+              "page_id": "page_qui_sommes_nous"
+            },
+            {
+              "label": "Formations et Événements",
+              "page_id": "page_formations_evenements"
+            },
+            {
+              "label": "Partenaires",
+              "page_id": "page_partenaires"
+            },
+            {
+              "label": "Congrès",
+              "page_id": "page_congres"
+            }
+          ]
+        },
+        {
+          "groupe": "Liens utiles",
+          "liens": [
+            {
+              "label": "Annuaire des soignants",
+              "page_id": "page_annuaire"
+            },
+            {
+              "label": "Contact",
+              "page_id": "page_contact"
+            },
+            {
+              "label": "Sitemap",
+              "page_id": "page_sitemap"
+            }
+          ]
+        },
+        {
+          "groupe": "Pages légales",
+          "liens": [
+            {
+              "label": "Mentions légales",
+              "page_id": "page_mentions_legales"
+            },
+            {
+              "label": "Politique de confidentialité",
+              "page_id": "page_confidentialite"
+            }
+          ]
+        }
+      ],
+      "contextuelle": [
+        {
+          "depuis_page_id": "page_accueil",
+          "vers_page_id": "page_annuaire",
+          "type_lien": "cta",
+          "label": "Annuaire des soignants",
+          "justification": "CTA principal de l’accueil vers l’orientation (annuaire)."
+        },
+        {
+          "depuis_page_id": "page_accueil",
+          "vers_page_id": "page_formations_evenements",
+          "type_lien": "cta",
+          "label": "Formations et Événements",
+          "justification": "Accès rapide depuis l’accueil vers les contenus mis à jour."
+        },
+        {
+          "depuis_page_id": "page_mieux_comprendre",
+          "vers_page_id": "page_parcours_prise_en_charge",
+          "type_lien": "lien_interne",
+          "label": "Parcours de prise en charge",
+          "justification": "Lien de continuité information → orientation (flow_01)."
+        },
+        {
+          "depuis_page_id": "page_parcours_prise_en_charge",
+          "vers_page_id": "page_annuaire",
+          "type_lien": "cta",
+          "label": "Trouver un professionnel",
+          "justification": "Sortie naturelle du parcours vers la recherche de soignants (flow_01/02)."
+        },
+        {
+          "depuis_page_id": "page_fiche_professionnel",
+          "vers_page_id": "page_contact",
+          "type_lien": "cta",
+          "label": "Demander une orientation à EndoCorse",
+          "justification": "Alternative si la patiente souhaite être orientée par la filière (flow_02)."
+        },
+        {
+          "depuis_page_id": "page_formations_evenements",
+          "vers_page_id": "page_confirmation_newsletter",
+          "type_lien": "cta",
+          "label": "S’inscrire à la newsletter",
+          "justification": "Point de conversion optionnel depuis les pages de contenus (flows_05/06)."
+        }
+      ]
+    },
+    "templates": [
+      {
+        "id": "tpl_home",
+        "nom": "Accueil",
+        "description": "Modèle spécifique de la page d’accueil (hero, CTA, recherche annuaire).",
+        "type": "page_unique",
+        "pages_utilisatrices": [
+          "page_accueil"
+        ],
+        "composants_prevus": [
+          "Hero",
+          "Accès rapides (CTA)",
+          "Recherche annuaire (filtres)",
+          "Bloc Formations et Événements",
+          "Bloc 'Vous êtes…'",
+          "Footer"
+        ]
+      },
+      {
+        "id": "tpl_hub_section",
+        "nom": "Page hub de section",
+        "description": "Page d’entrée d’une grande section avec tuiles/liens vers sous-pages.",
+        "type": "page_unique",
+        "pages_utilisatrices": [
+          "page_endocorse",
+          "page_endometriose",
+          "page_pro",
+          "page_patiente"
+        ],
+        "composants_prevus": [
+          "Titre + intro",
+          "Cartes vers sous-pages",
+          "Bloc liens utiles",
+          "Breadcrumb"
+        ]
+      },
+      {
+        "id": "tpl_page_editoriale_sidebar",
+        "nom": "Page éditoriale avec sidebar",
+        "description": "Page contenu structurée avec navigation latérale et sommaire ancré.",
+        "type": "page_repetable",
+        "pages_utilisatrices": [
+          "page_qui_sommes_nous",
+          "page_mieux_comprendre",
+          "page_diagnostic_traitements",
+          "page_prise_en_charge_medicale",
+          "page_vivre_avec",
+          "page_comment_adherer",
+          "page_pourquoi_rejoindre",
+          "page_se_former",
+          "page_recherche_clinique",
+          "page_ou_me_soigner",
+          "page_parcours_prise_en_charge",
+          "page_mon_quotidien",
+          "page_associations",
+          "page_faq",
+          "page_etp"
+        ],
+        "composants_prevus": [
+          "Titre",
+          "Sommaire ancré",
+          "Contenu structuré",
+          "Bloc 'À retenir'",
+          "Sidebar navigation",
+          "Breadcrumb"
+        ]
+      },
+      {
+        "id": "tpl_page_editoriale_simple",
+        "nom": "Page éditoriale simple",
+        "description": "Page contenu sans sidebar (texte + médias).",
+        "type": "page_repetable",
+        "pages_utilisatrices": [
+          "page_partenaires",
+          "page_congres",
+          "page_adherer_explication"
+        ],
+        "composants_prevus": [
+          "Titre",
+          "Contenu",
+          "CTA contextuels",
+          "Breadcrumb"
+        ]
+      },
+      {
+        "id": "tpl_listing_evenements",
+        "nom": "Listing Formations et Événements",
+        "description": "Liste filtrable/paginée des actualités, formations, événements.",
+        "type": "listing",
+        "pages_utilisatrices": [
+          "page_formations_evenements"
+        ],
+        "composants_prevus": [
+          "Titre + intro",
+          "Filtres / catégories",
+          "Liste de cartes",
+          "Pagination",
+          "Bloc newsletter"
+        ]
+      },
+      {
+        "id": "tpl_detail_evenement",
+        "nom": "Détail actualité/événement",
+        "description": "Page détail d’une publication avec liens vers contenus associés.",
+        "type": "fiche_detail",
+        "pages_utilisatrices": [
+          "page_evenement_detail"
+        ],
+        "composants_prevus": [
+          "Titre",
+          "Métadonnées (date, catégorie)",
+          "Contenu",
+          "Partage",
+          "Suggestions d’autres contenus"
+        ]
+      },
+      {
+        "id": "tpl_listing_annuaire",
+        "nom": "Listing annuaire",
+        "description": "Recherche + filtres + liste de professionnels/structures.",
+        "type": "listing",
+        "pages_utilisatrices": [
+          "page_annuaire"
+        ],
+        "composants_prevus": [
+          "Champ recherche",
+          "Filtres (spécialité, ville, niveau)",
+          "Résultats (cartes)",
+          "Pagination/chargement",
+          "CTA contact/orientation"
+        ]
+      },
+      {
+        "id": "tpl_fiche_professionnel",
+        "nom": "Fiche professionnel",
+        "description": "Détail d’un professionnel avec badge niveau 1/2/3 et modalités d’orientation.",
+        "type": "fiche_detail",
+        "pages_utilisatrices": [
+          "page_fiche_professionnel"
+        ],
+        "composants_prevus": [
+          "En-tête fiche",
+          "Badge niveau (code couleur)",
+          "Coordonnées",
+          "Modalités d’orientation",
+          "CTA (contact selon règles)",
+          "Lien partage"
+        ]
+      },
+      {
+        "id": "tpl_contact_form",
+        "nom": "Contact (formulaire)",
+        "description": "Formulaire de contact orientation + RGPD + anti-spam.",
+        "type": "formulaire",
+        "pages_utilisatrices": [
+          "page_contact"
+        ],
+        "composants_prevus": [
+          "Intro",
+          "Formulaire",
+          "Consentement",
+          "Anti-spam",
+          "Infos pratiques (tél/email)"
+        ]
+      },
+      {
+        "id": "tpl_listing_ressources",
+        "nom": "Listing ressources",
+        "description": "Bibliothèque de documents (catégories + recherche).",
+        "type": "listing",
+        "pages_utilisatrices": [
+          "page_outils_ressources"
+        ],
+        "composants_prevus": [
+          "Titre + intro",
+          "Filtres/catégories",
+          "Liste documents",
+          "Lien vers détail"
+        ]
+      },
+      {
+        "id": "tpl_detail_ressource",
+        "nom": "Détail ressource",
+        "description": "Page détail avec résumé, source et téléchargement.",
+        "type": "fiche_detail",
+        "pages_utilisatrices": [
+          "page_ressource_detail"
+        ],
+        "composants_prevus": [
+          "Titre",
+          "Résumé",
+          "Métadonnées (date, source)",
+          "Bouton télécharger",
+          "Ressources similaires"
+        ]
+      },
+      {
+        "id": "tpl_hub_adhesion",
+        "nom": "Hub Adhésion",
+        "description": "Page d’entrée de l’adhésion (CTA vers explication/démarrage).",
+        "type": "page_unique",
+        "pages_utilisatrices": [
+          "page_adherer_cta"
+        ],
+        "composants_prevus": [
+          "Étapes",
+          "CTA démarrer",
+          "Pré-requis",
+          "FAQ courte"
+        ]
+      },
+      {
+        "id": "tpl_adhesion_start",
+        "nom": "Adhésion — démarrage",
+        "description": "Email + mot de passe / création de session.",
+        "type": "formulaire",
+        "pages_utilisatrices": [
+          "page_adherer_demarrage"
+        ],
+        "composants_prevus": [
+          "Formulaire",
+          "Aide",
+          "Anti-spam",
+          "Lien reprise"
+        ]
+      },
+      {
+        "id": "tpl_adhesion_qcm",
+        "nom": "Adhésion — QCM",
+        "description": "QCM paginé avec sauvegarde et soumission.",
+        "type": "formulaire",
+        "pages_utilisatrices": [
+          "page_adhesion_qcm"
+        ],
+        "composants_prevus": [
+          "Progression",
+          "Questions",
+          "Sauvegarde",
+          "Soumission"
+        ]
+      },
+      {
+        "id": "tpl_adhesion_charte",
+        "nom": "Adhésion — charte",
+        "description": "Lecture et signature/acceptation de charte.",
+        "type": "formulaire",
+        "pages_utilisatrices": [
+          "page_adhesion_charte"
+        ],
+        "composants_prevus": [
+          "Texte charte",
+          "Case acceptation",
+          "Signature",
+          "CTA signer"
+        ]
+      },
+      {
+        "id": "tpl_adhesion_profil",
+        "nom": "Adhésion — profil",
+        "description": "Formulaire profil pro avec niveau, RPPS, etc.",
+        "type": "formulaire",
+        "pages_utilisatrices": [
+          "page_adhesion_profil"
+        ],
+        "composants_prevus": [
+          "Champs profil",
+          "Sélection niveau",
+          "Upload",
+          "Sauvegarde brouillon",
+          "Validation"
+        ]
+      },
+      {
+        "id": "tpl_listing_docs_adhesion",
+        "nom": "Documents d’adhésion",
+        "description": "Listing des documents à télécharger après/pendant adhésion.",
+        "type": "listing",
+        "pages_utilisatrices": [
+          "page_docs_adhesion"
+        ],
+        "composants_prevus": [
+          "Liste documents",
+          "Téléchargements",
+          "Infos"
+        ]
+      },
+      {
+        "id": "tpl_confirmation",
+        "nom": "Page de confirmation",
+        "description": "Modèle réutilisable pour confirmations (contact, adhésion, newsletter).",
+        "type": "systeme",
+        "pages_utilisatrices": [
+          "page_confirmation_contact",
+          "page_confirmation_newsletter",
+          "page_confirmation_adhesion"
+        ],
+        "composants_prevus": [
+          "Message",
+          "Récapitulatif",
+          "Liens utiles"
+        ]
+      },
+      {
+        "id": "tpl_legal",
+        "nom": "Pages légales",
+        "description": "Modèle pour mentions légales / politique de confidentialité.",
+        "type": "systeme",
+        "pages_utilisatrices": [
+          "page_mentions_legales",
+          "page_confidentialite"
+        ],
+        "composants_prevus": [
+          "Titre",
+          "Contenu légal",
+          "Date de mise à jour"
+        ]
+      },
+      {
+        "id": "tpl_system_sitemap",
+        "nom": "Plan du site",
+        "description": "Liste structurée de toutes les pages.",
+        "type": "systeme",
+        "pages_utilisatrices": [
+          "page_sitemap"
+        ],
+        "composants_prevus": [
+          "Liste arborescente",
+          "Recherche (optionnel)"
+        ]
+      },
+      {
+        "id": "tpl_404",
+        "nom": "Page 404",
+        "description": "Page non trouvée avec suggestions.",
+        "type": "systeme",
+        "pages_utilisatrices": [
+          "page_404"
+        ],
+        "composants_prevus": [
+          "Message",
+          "Recherche",
+          "Liens vers pages clés"
+        ]
+      },
+      {
+        "id": "tpl_system_message",
+        "nom": "Écrans système / hors site",
+        "description": "Représentation d’étapes hors site (emails) pour documentation des flows.",
+        "type": "systeme",
+        "pages_utilisatrices": [
+          "page_email_resultats_qcm",
+          "page_hors_site"
+        ],
+        "composants_prevus": [
+          "Message",
+          "Lien retour site"
+        ]
+      }
+    ],
+    "couverture_flows": [
+      {
+        "flow_id": "flow_01",
+        "flow_nom": "Découvrir EndoCorse et comprendre l’endométriose",
+        "pages_requises": [
+          "Accueil",
+          "Comprendre l’endométriose",
+          "Parcours de prise en charge",
+          "Annuaire — Listing"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_accueil",
+          "page_mieux_comprendre",
+          "page_parcours_prise_en_charge",
+          "page_annuaire"
+        ],
+        "couverture_complete": true
+      },
+      {
+        "flow_id": "flow_02",
+        "flow_nom": "Rechercher un professionnel dans l’annuaire et consulter une fiche",
+        "pages_requises": [
+          "Annuaire — Listing",
+          "Fiche professionnel"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_annuaire",
+          "page_fiche_professionnel"
+        ],
+        "couverture_complete": true
+      },
+      {
+        "flow_id": "flow_03",
+        "flow_nom": "Demander une information / une orientation via le formulaire de contact",
+        "pages_requises": [
+          "Contact",
+          "Confirmation contact",
+          "Politique de confidentialité"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_contact",
+          "page_confirmation_contact",
+          "page_confidentialite"
+        ],
+        "couverture_complete": true
+      },
+      {
+        "flow_id": "flow_04",
+        "flow_nom": "Télécharger une ressource (PDF, brochure, document utile)",
+        "pages_requises": [
+          "Ressources",
+          "Ressource — Détail"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_outils_ressources",
+          "page_ressource_detail"
+        ],
+        "couverture_complete": true
+      },
+      {
+        "flow_id": "flow_05",
+        "flow_nom": "S’inscrire à la newsletter et confirmer l’abonnement",
+        "pages_requises": [
+          "Accueil",
+          "Confirmation newsletter",
+          "Politique de confidentialité"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_accueil",
+          "page_confirmation_newsletter",
+          "page_confidentialite"
+        ],
+        "couverture_complete": true
+      },
+      {
+        "flow_id": "flow_06",
+        "flow_nom": "Consulter une actualité et revenir régulièrement",
+        "pages_requises": [
+          "Actualité — Détail",
+          "Actualités — Listing"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_evenement_detail",
+          "page_formations_evenements"
+        ],
+        "couverture_complete": true
+      },
+      {
+        "flow_id": "flow_07",
+        "flow_nom": "Découvrir la filière (professionnel) et comprendre l’intérêt de l’annuaire",
+        "pages_requises": [
+          "À propos / Filière",
+          "Annuaire — Listing",
+          "Fiche professionnel"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_qui_sommes_nous",
+          "page_annuaire",
+          "page_fiche_professionnel"
+        ],
+        "couverture_complete": true
+      },
+      {
+        "flow_id": "flow_08",
+        "flow_nom": "Adhérer à la filière EndoCorse (parcours en 3 étapes)",
+        "pages_requises": [
+          "Adhérer à la filière — Explication",
+          "Adhérer à la filière — Démarrage",
+          "Adhésion — Étape 1 : QCM",
+          "Email — Résultats QCM",
+          "Adhésion — Étape 2 : Signature de la charte",
+          "Adhésion — Étape 3 : Création du profil",
+          "Confirmation d’adhésion",
+          "Ressources — Documents d’adhésion (téléchargements)"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_adherer_explication",
+          "page_adherer_demarrage",
+          "page_adhesion_qcm",
+          "page_email_resultats_qcm",
+          "page_adhesion_charte",
+          "page_adhesion_profil",
+          "page_confirmation_adhesion",
+          "page_docs_adhesion"
+        ],
+        "couverture_complete": true
+      },
+      {
+        "flow_id": "flow_09",
+        "flow_nom": "Rechercher un professionnel pour orienter une patiente et partager un lien",
+        "pages_requises": [
+          "Annuaire — Listing",
+          "Fiche professionnel",
+          "Hors site"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_annuaire",
+          "page_fiche_professionnel",
+          "page_hors_site"
+        ],
+        "couverture_complete": true
+      },
+      {
+        "flow_id": "flow_10",
+        "flow_nom": "Consulter actualités/ressources de filière (professionnel) et rester informé",
+        "pages_requises": [
+          "Actualité — Détail",
+          "Ressources",
+          "Confirmation newsletter"
+        ],
+        "pages_presentes_dans_sitemap": [
+          "page_evenement_detail",
+          "page_outils_ressources",
+          "page_confirmation_newsletter"
+        ],
+        "couverture_complete": true
+      }
+    ],
+    "alertes": [
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : EndoCorse (page_endocorse)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Partenaires (page_partenaires)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Congrès (page_congres)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : L'endométriose (page_endometriose)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Diagnostic et traitements (page_diagnostic_traitements)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Prise en charge médicale (page_prise_en_charge_medicale)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Vivre avec la maladie (page_vivre_avec)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Vous êtes un professionnel de santé (page_pro)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Comment adhérer à la filière (page_comment_adherer)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Pourquoi nous rejoindre (page_pourquoi_rejoindre)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Se former (page_se_former)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : La recherche clinique (page_recherche_clinique)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Vous êtes une patiente (page_patiente)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Où me soigner (page_ou_me_soigner)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Mon quotidien (page_mon_quotidien)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Les associations de patientes (page_associations)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Foire aux questions (page_faq)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Éducation thérapeutique patiente (page_etp)."
+      },
+      {
+        "type": "risque",
+        "section": "pages",
+        "champ": "id",
+        "message": "Page potentiellement orpheline (dans aucun flow) : Adhérer à la filière (page_adherer_cta)."
+      },
+      {
+        "type": "contradiction",
+        "section": "pages",
+        "champ": "nom",
+        "message": "Les user flows mentionnent 'Comprendre l’endométriose' et 'À propos / Filière' ; l’existant preprod utilise respectivement 'Mieux comprendre la maladie' et 'Qui sommes-nous ?' (noms alignés en faveur de la preprod)."
+      },
+      {
+        "type": "contradiction",
+        "section": "navigation",
+        "champ": "principale",
+        "message": "L’existant preprod affiche 'Actualités & événements' mais une décision récente indique un renommage en 'Formations et Événements' (menu header + accueil). Le sitemap retient 'Formations et Événements'."
+      },
+      {
+        "type": "recommandation",
+        "section": "pages",
+        "champ": "page_contact",
+        "message": "La preprod ne montre pas encore de page 'Contact' dédiée ; les flows en dépendent. Prévoir cette page ou valider l’alternative (contact intégré dans les pages)."
+      },
+      {
+        "type": "recommandation",
+        "section": "pages",
+        "champ": "page_parcours_prise_en_charge",
+        "message": "La page 'Parcours de prise en charge' est requise par F2 et les flows, mais n’apparaît pas explicitement dans le menu existant ; elle est ajoutée sous 'Vous êtes une patiente'. À valider."
+      },
+      {
+        "type": "fusion",
+        "section": "pages",
+        "champ": "nom",
+        "message": "Les flows parlent de 'Ressources' ; la preprod a 'Outils & ressources cliniques'. Le sitemap les aligne (même page) pour éviter un doublon."
+      }
+    ]
+  }
+}
